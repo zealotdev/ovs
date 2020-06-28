@@ -1,14 +1,15 @@
-# OvsFront
+# College Online Voting System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
+This project is developed using angular framework, to serve the purpose of replacing paper ballot based voting system on small community like a college.
+> The project is still on front-end phase, so don't get your expectations up 😊
+---
+## Technology used
+- The project is based on angular 9
+
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -24,4 +25,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Comment up on this repo, or just email me: g33ky.me@pm.me / geekjorge@gmail.com. I'll be happy to help.
