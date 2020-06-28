@@ -2,6 +2,7 @@
 
 This project is developed using angular framework, to serve the purpose of replacing paper ballot based voting system on small community like a college.
 > The project is still on front-end phase, so don't get your expectations up 😊
+
 ---
 ## Technology used
 - The project is based on angular 9
