@@ -1,0 +1,12 @@
+main {
+  margin: 8rem auto;
+  min-height: 60rem;
+  background-color: #fff;
+}
+
+.main--wrapper {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 2rem;
+  margin: 2rem;
+}
