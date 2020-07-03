@@ -1,8 +1,57 @@
 header {
   width: 100%;
-  background-color: #f4f6ff;
+  height: auto;
 
-  & nav {
-    padding: 4rem 0;
+  & .nav {
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 40%;
+      border-top-left-radius: 4rem;
+      border-bottom-left-radius: 4rem;
+      background-color: darken(#65cee6, 10);
+      transition: all 0.5s ease-in-out;
+    }
+    &:hover {
+      &::before {
+        width: 41%;
+      }
+    }
+    &--logo {
+      height: 3rem;
+    }
+
+    &--links {
+      list-style: none;
+      display: flex;
+      margin-left: auto;
+      z-index: 1;
+
+      &-item {
+        a {
+          text-decoration: none;
+          color: #f4f6ff;
+          padding: 0.5rem 1.2rem;
+          margin-left: 2rem;
+          font-size: 1.6rem;
+          border-radius: 4rem;
+          letter-spacing: 0.1rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: lighten($color: #65cee6, $amount: 10);
+          }
+        }
+      }
+    }
   }
 }
