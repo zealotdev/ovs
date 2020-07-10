@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/shared/header.component';
 import { HighlightsComponent } from './components/highlights/hightlights.component';
 import { GraphComponent } from './components/graph/graph.component';
 import { VoteboardComponent } from './components/voteboard/voteboard.component';
+// import { LiveSessionComponent } from './components/highlights/live-session/live-session.component';
 
 @NgModule({
   declarations: [
