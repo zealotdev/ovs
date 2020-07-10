@@ -1,8 +1,71 @@
 header {
   width: 100%;
-  background-color: #f4f6ff;
+  height: auto;
+  position: relative;
 
-  & nav {
-    padding: 4rem 0;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 12%;
+    background-color: darken(rgba(64, 134, 180, 0.8), 30);
+    top: 0;
+    left: 0;
+    border-top-right-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+  }
+  & .nav {
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 45vw;
+      border-top-left-radius: 4rem;
+      border-bottom-left-radius: 4rem;
+      background-color: darken(rgba(68, 124, 161, 0.8), 5);
+      transition: all 0.5s ease-in-out;
+    }
+    &:hover {
+      &::before {
+        width: 47vw;
+      }
+    }
+    &--logo {
+      height: 3rem;
+    }
+
+    &--links {
+      list-style: none;
+      display: flex;
+      margin-left: auto;
+      z-index: 1;
+
+      &-item {
+        a {
+          text-decoration: none;
+          color: darken(#fefefe, 10);
+          padding: 0.5rem 1.2rem;
+          margin-left: 2rem;
+          font-size: 1.6rem;
+          font-weight: 500;
+          border-radius: 4rem;
+          letter-spacing: 0.1rem;
+          transition: all 0.3s ease;
+          text-transform: uppercase;
+
+          &:hover {
+            color: lighten($color: #fefefe, $amount: 10);
+          }
+        }
+      }
+    }
   }
 }

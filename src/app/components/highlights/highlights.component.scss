@@ -1,4 +1,10 @@
 .highlight {
-  background-color: #f4f6ff;
+  // background-color: #fff;
   padding: 4rem 0;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+
+  &--live {
+  }
 }
