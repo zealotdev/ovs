@@ -1,0 +1,19 @@
+<div class="input--box">
+  <div class="font__secondary input--box_text">
+    Enter Vote Code
+  </div>
+  <input
+    class="input"
+    [class.error]="error && input"
+    type="text"
+    placeholder="eg. 8G8XU2"
+    [(ngModel)]="input"
+    #codeInput
+  />
+  <span *ngIf="error && input">
+    Invalid Code!
+  </span>
+  <div>
+    <button class="btn" (click)="verify(codeInput.value)">verify</button>
+  </div>
+</div>

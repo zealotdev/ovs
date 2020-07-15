@@ -1,0 +1,32 @@
+@keyframes pulse {
+  0% {
+    color: #0792ef;
+    opacity: 0.55;
+  }
+  50% {
+    color: darken(#0792ef, 30);
+    opacity: 0.15;
+  }
+  100% {
+    color: #0792ef;
+    opacity: 0.55;
+  }
+}
+
+@keyframes tick {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

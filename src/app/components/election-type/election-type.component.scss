@@ -1,0 +1,46 @@
+.choices {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  // flex-wrap: wrap;
+  color: #06beb6;
+
+  & span {
+    font-weight: 500;
+  }
+  &-el {
+    list-style: none;
+    padding: 0.4rem 0.4rem;
+    background: #06beb6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #48b1bf,
+      #06beb6
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #48b1bf,
+      #06beb6
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 0.4rem;
+    color: #fefefe;
+    margin-bottom: 0.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: lighten(#06beb6, 10); /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        rgba(72, 177, 191, 0.9),
+        rgba(6, 190, 181, 0.9)
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        rgba(72, 177, 191, 0.9),
+        rgba(6, 190, 181, 0.9)
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      color: darken(#fefefe, 10);
+    }
+  }
+}

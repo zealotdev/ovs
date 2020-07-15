@@ -1,1 +1,20 @@
-<div class="voteboard"></div>
+<div class="voteboard">
+  <div
+    class="voteboard--box"
+    [class.voteboard--box__verified_style]="verified"
+    [class.voteboard--box__align]="!verified"
+  >
+    <div class="voteboard--box-desc">
+      <div class="voteboard--box-desc__title">Voteboard</div>
+      <div class="voteboard--box-desc__hint" *ngIf="!verified">
+        To vote please verify your code below.
+      </div>
+    </div>
+
+    <app-verify-code
+      (codeVerified)="onVerified($event)"
+      *ngIf="!verified"
+    ></app-verify-code>
+  </div>
+  <app-ballot *ngIf="verified"></app-ballot>
+</div>

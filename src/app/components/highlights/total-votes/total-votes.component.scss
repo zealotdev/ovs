@@ -1,0 +1,34 @@
+.total--votes-element {
+  background: #ffafbd; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffc3a0,
+    #ffafbd
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffc3a0,
+    #ffafbd
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.election--highlights {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+
+  &-el {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed rgba($color: #000000, $alpha: 0.2);
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+.leading {
+  color: #06beb6;
+  font-size: 1.4rem;
+}
