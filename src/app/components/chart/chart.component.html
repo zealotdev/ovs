@@ -1,0 +1,20 @@
+<div class="chart">
+  <app-election-type
+    (selectedElection)="onSelected($event)"
+  ></app-election-type>
+  <div class="chart--canvas">
+    <span class="title"
+      >{{ electionTitle | titlecase }} Election Standings</span
+    >
+    <canvas
+      baseChart
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [legend]="barChartLegend"
+      [colors]="colors"
+      [chartType]="barChartType"
+    >
+    </canvas>
+  </div>
+</div>

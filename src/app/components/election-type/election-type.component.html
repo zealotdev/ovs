@@ -1,0 +1,16 @@
+<div class="choices">
+  <span>Results of:</span>
+  <select
+    class="dropdown"
+    name="type"
+    #electionType
+    (input)="selectedEl(electionType.value)"
+  >
+    <option
+      class="dropdown-item"
+      *ngFor="let election of elections"
+      [value]="election.id"
+      >{{ election.electionType | titlecase }} Election.</option
+    >
+  </select>
+</div>

@@ -1,0 +1,14 @@
+.input--box {
+  &_text {
+    font-size: 1.4rem;
+  }
+}
+.error {
+  color: #ff00008c;
+  border-color: #ff00008c;
+}
+span {
+  color: #ff00008c;
+  font-style: italic;
+  font-size: 1.2rem;
+}

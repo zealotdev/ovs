@@ -1,7 +1,9 @@
 main {
   margin: 8rem auto;
   min-height: 60rem;
-  background-color: #f4f6ff;
+  background-color: rgba(255, 255, 255);
+  border-radius: 0.6rem;
+  box-shadow: 0.3rem 0.9rem 0.9rem rgba($color: #000000, $alpha: 0.2);
 }
 
 .main--wrapper {
@@ -9,4 +11,8 @@ main {
   grid-template-columns: 3fr 2fr;
   grid-gap: 2rem;
   margin: 2rem;
+  height: auto;
+  padding-bottom: 4rem;
+
+
 }

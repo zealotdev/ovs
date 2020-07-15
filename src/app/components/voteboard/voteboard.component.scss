@@ -1,4 +1,56 @@
 .voteboard {
-  background-color: #fff;
-  height: 74vh;
+  min-height: 85vh;
+  position: relative;
+  padding: 2rem;
+  background: #de6262; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffb88c,
+    #de6262
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffb88c,
+    #de6262
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 0.6rem;
+  box-shadow: 0.3rem 0.9rem 0.9rem rgba($color: #000000, $alpha: 0.2);
+
+  &--box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    &__align {
+      display: flex;
+      flex-direction: column;
+      height: 40%;
+      justify-content: space-between;
+    }
+
+    &__verified_style {
+      position: relative;
+      top: initial;
+      left: initial;
+      transform: translate(0);
+    }
+    &-desc {
+      &__title {
+        color: #656379;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        font-size: 3rem;
+      }
+      &__hint {
+        color: #06beb6;
+        text-transform: capitalize;
+        letter-spacing: 0.1rem;
+        font-size: 1rem;
+        font-style: italic;
+        line-height: 1;
+      }
+    }
+  }
 }
