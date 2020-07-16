@@ -40,7 +40,5 @@ export class TotalVotesComponent implements OnInit {
     this.selectedEl.results.forEach((el) =>
       el.data.forEach((votes) => (this.sum += votes))
     );
-
-    console.log(this.sum);
   }
 }
