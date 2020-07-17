@@ -1,30 +1,3 @@
-export const RESULTS = [
-  {
-    data: [345],
-    label: 'Jorge D.',
-  },
-  {
-    data: [200],
-    label: 'Foo B.',
-  },
-  {
-    data: [234],
-    label: 'Mike T.',
-  },
-  {
-    data: [239],
-    label: 'Abraham L.',
-  },
-  {
-    data: [134],
-    label: 'Martin L.',
-  },
-  {
-    data: [201],
-    label: 'Depp J.',
-  },
-];
-
 export const ELECTIONS = [
   {
     id: 1,
