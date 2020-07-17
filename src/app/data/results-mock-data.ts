@@ -28,32 +28,33 @@ export const RESULTS = [
 export const ELECTIONS = [
   {
     id: 1,
-    electionType: 'presidential',
+    electionType: 'president',
     active: true,
-    results: [
+    startTime: new Date().getHours(),
+    candidates: [
       {
-        data: [345],
-        label: 'Jorge D.',
+        id: 1,
+        name: 'Jorge D.',
+        bio: 'Amazing coder',
+        votes: 345,
       },
       {
-        data: [200],
-        label: 'Mike T.',
+        id: 2,
+        name: 'Mark Twain',
+        bio: 'The Philosopher',
+        votes: 125,
       },
       {
-        data: [234],
-        label: 'Jose M.',
+        id: 3,
+        name: 'John Doe',
+        bio: 'No body cares who he is',
+        votes: 230,
       },
       {
-        data: [239],
-        label: 'Imma M.',
-      },
-      {
-        data: [134],
-        label: 'Vicky V.',
-      },
-      {
-        data: [201],
-        label: 'Manyahi Sir.',
+        id: 4,
+        name: 'Foo Bar',
+        bio: 'What is this',
+        votes: 300,
       },
     ],
   },
@@ -61,22 +62,25 @@ export const ELECTIONS = [
     id: 2,
     electionType: 'women representative',
     active: true,
-    results: [
+    startTime: new Date().getHours(),
+    candidates: [
       {
-        data: [120],
-        label: 'Vicky V.',
+        id: 1,
+        name: 'Vicky V',
+        bio: 'Ambitious lady',
+        votes: 120,
       },
       {
-        data: [200],
-        label: 'Anitha A.',
+        id: 2,
+        name: 'Mary J',
+        bio: 'The militia',
+        votes: 85,
       },
       {
-        data: [234],
-        label: 'MarryJ M.',
-      },
-      {
-        data: [90],
-        label: 'Sabitina S.',
+        id: 3,
+        name: 'Sabby T',
+        bio: 'The Ustadhat',
+        votes: 98,
       },
     ],
   },
@@ -84,18 +88,25 @@ export const ELECTIONS = [
     id: 3,
     electionType: 'speaker',
     active: true,
-    results: [
+    startTime: new Date().getHours(),
+    candidates: [
       {
-        data: [12],
-        label: 'Jerememiah J.',
+        id: 1,
+        name: 'Jere J.',
+        bio: 'You go the CR',
+        votes: 13,
       },
       {
-        data: [34],
-        label: 'Vicky V.',
+        id: 2,
+        name: 'Aziz',
+        bio: 'The blur monster',
+        votes: 23,
       },
       {
-        data: [8],
-        label: 'Aziz A.',
+        id: 3,
+        name: 'Vicky V.',
+        bio: 'Ambitious lady',
+        votes: 24,
       },
     ],
   },
@@ -103,22 +114,25 @@ export const ELECTIONS = [
     id: 4,
     electionType: 'class representative',
     active: true,
-    results: [
+    startTime: new Date().getHours(),
+    candidates: [
       {
-        data: [12],
-        label: 'Vicky V.',
+        id: 1,
+        name: 'Jere J.',
+        bio: 'Here go the CR',
+        votes: 23,
       },
       {
-        data: [13],
-        label: 'Jeremiah J.',
+        id: 2,
+        name: 'Aziz',
+        bio: 'The blur monster',
+        votes: 19,
       },
       {
-        data: [15],
-        label: 'Hamad H.',
-      },
-      {
-        data: [13],
-        label: 'Rodman M.',
+        id: 3,
+        name: 'Vicky V.',
+        bio: 'Ambitious lady',
+        votes: 30,
       },
     ],
   },

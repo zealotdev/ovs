@@ -11,5 +11,15 @@ export class electionDataService implements OnInit {
   getElectionData(): Observable<any[]> {
     return of(ELECTIONS);
   }
+
+  vote(electionID: number, candidateID: number) {
+    var candidates = ELECTIONS.find((election) => election.id == electionID)
+      .candidates;
+
+    var candToBeVoted = candidates.find((cand) => cand.id == candidateID);
+    candToBeVoted.votes += 100;
+  }
   ngOnInit() {}
+
+  // TODO update chart data on vote
 }
