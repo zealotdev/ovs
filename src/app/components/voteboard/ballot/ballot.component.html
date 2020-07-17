@@ -1,3 +1,49 @@
-<div>
-  ballot
+<div class="ballot">
+  <div class="dropdown--section">
+    <span>
+      Select Election:
+    </span>
+    <select
+      class="dropdown"
+      name="type"
+      #selection
+      (input)="onSelection(selection.value)"
+    >
+      <option
+        class="dropdown-item"
+        *ngFor="let election of elections"
+        [value]="election.id"
+        >{{ election.electionType | titlecase | slice: 0:9 }} Election</option
+      >
+    </select>
+  </div>
+  <div class="selection--list_box">
+    <div class="selection--list">
+      <span class="selection--list-title"
+        >{{ electionType | titlecase | slice: 0:9 }} Candidates</span
+      >
+      <div class="cands--list">
+        <span
+          class="cands--list-item"
+          *ngFor="let cand of selectedEl"
+          (click)="onSelect(cand)"
+          [class.selected]="cand.name == candidateName"
+        >
+          <span class="cands--list-item_badge"></span>
+          <span class="cands--list-item_cand">{{ cand.name }}</span></span
+        >
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="selected--cand" *ngIf="candidateName">
+        <span class="quote">"</span> I vote for
+        <span class="cand--name">{{ candidateName }}</span> as a
+        <span>{{ electionType | titlecase }}</span
+        ><span class="quote">"</span>
+      </div>
+      <button class="btn vote__btn" (click)="onVote()">
+        Vote
+      </button>
+    </div>
+  </div>
 </div>

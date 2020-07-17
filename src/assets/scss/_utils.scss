@@ -121,10 +121,15 @@
       rgba(72, 177, 191, 0.9),
       rgba(6, 190, 181, 0.9)
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    box-shadow: 0 0.3rem 0.9rem rgba($color: #000000, $alpha: 0.3);
+    box-shadow: 0 0.1rem 0.9rem rgba($color: #000000, $alpha: 0.3);
+    transform: scale(0.975);
   }
   &:focus {
     outline: none;
+  }
+  &:active {
+    box-shadow: 0 0.05rem 0.9rem rgba($color: #000000, $alpha: 0.3);
+    transform: scale(0.95);
   }
 }
 
@@ -151,4 +156,10 @@
   &:focus {
     outline: none;
   }
+}
+
+.quote {
+  color: #5f7d8c;
+  font-size: 2rem;
+  font-family: "Damion", cursive !important;
 }

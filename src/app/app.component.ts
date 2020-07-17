@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   constructor(private _resultsService: resultService) {}
   ngOnInit() {
     this._resultsService
-      .getResults()
+      .getResults(0)
       .subscribe((results) => (this.resultData = results));
 
     this._resultsService

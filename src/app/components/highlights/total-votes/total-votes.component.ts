@@ -22,11 +22,9 @@ export class TotalVotesComponent implements OnInit {
 
   onSelect(id: number) {
     if (id != 0) {
-      this._electionDataService
-        .getElectionData()
-        .subscribe(
-          (data) => (this.selectedEl = data.find((el) => el.id == id))
-        );
+      this._electionDataService.getElectionData().subscribe((data) => {
+        this.selectedEl = data.find((el) => el.id == id);
+      });
     } else {
       this._electionDataService
         .getElectionData()
@@ -37,8 +35,9 @@ export class TotalVotesComponent implements OnInit {
   }
 
   findSum() {
-    this.selectedEl.results.forEach((el) =>
-      el.data.forEach((votes) => (this.sum += votes))
-    );
+    this.sum = 0;
+    this.selectedEl.candidates.forEach((candidate) => {
+      this.sum += candidate.votes;
+    });
   }
 }
