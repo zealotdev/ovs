@@ -1,3 +1,5 @@
+@import "../../../../assets/scss/media";
+
 .ballot {
   margin: 2rem 1rem;
   background-color: #eeeeee;
@@ -5,14 +7,29 @@
   border-radius: 0.6rem;
   padding: 2rem 1rem;
 
+  @include md-down {
+    margin: 0;
+  }
+
   & .dropdown--section {
     display: flex;
-    padding: 0 8rem 2rem 0;
+    padding: 0 4rem 2rem 4rem;
 
+    @include md-down {
+      padding: 0 2rem 2rem 2rem;
+    }
+
+    @include sm {
+      padding: 0 1rem 2rem 1rem;
+    }
     & span {
       color: #06beb6;
-      font-size: 1.4rem;
       font-weight: 500;
+      font-size: 1.4rem;
+
+      @include md-down {
+        font-size: 1.2rem;
+      }
     }
 
     & select {
@@ -39,6 +56,10 @@
         font-size: 1.6rem;
         color: #06beb6;
         user-select: none;
+
+        @include md-down {
+          font-size: 1.4rem;
+        }
       }
     }
 

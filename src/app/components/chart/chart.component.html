@@ -1,10 +1,11 @@
 <div class="chart">
   <app-election-type
+    class="select--el"
     (selectedElection)="onSelected($event)"
   ></app-election-type>
   <div class="chart--canvas">
     <span class="title"
-      >{{ electionTitle | titlecase }} Election <br />
+      >{{ electionTitle | titlecase | slice: 0:9 }} Election <br />
       Standings</span
     >
     <canvas

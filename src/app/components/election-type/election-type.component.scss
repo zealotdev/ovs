@@ -1,11 +1,17 @@
+@import "./../../../assets/scss/media";
+
 .choices {
   display: flex;
   align-items: center;
   font-size: 1.4rem;
   color: #06beb6;
-
+  margin-left: 2rem;
+  @include sm {
+    font-size: 1.2rem;
+  }
   & span {
     font-weight: 500;
+    margin-right: 2rem;
   }
   &-el {
     list-style: none;

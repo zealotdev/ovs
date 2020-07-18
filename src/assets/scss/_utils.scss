@@ -7,17 +7,22 @@
   color: #fefefe;
 }
 .container {
-  width: 90%;
+  width: 100%;
+  @include xl {
+    width: 90%;
+  }
   margin: auto;
 }
 .card {
   background-color: #c4c6fe;
   background-image: linear-gradient(to bottom right, #c4c6fe, #9aa0ff);
   color: #656379;
-  height: 20vh;
   border-radius: 0.6rem;
   box-shadow: 0.3rem 0.9rem 0.9rem rgba($color: #000000, $alpha: 0.2);
-  min-width: 30rem;
+
+  @include md-down {
+    margin-bottom: 2rem;
+  }
 
   &--body {
     padding: 2rem;
@@ -31,19 +36,27 @@
       font-weight: 500;
       color: #fefefe;
       display: block;
+
+      @include sm {
+        font-size: 1.2rem;
+      }
     }
 
     &__desc {
       display: flex;
       justify-content: space-between;
       font-family: "Damion", cursive !important;
-      align-items: baseline;
       margin-top: 2rem;
 
       &-details {
         font-size: 4rem;
         font-weight: 600;
         align-self: center;
+        margin-top: auto;
+
+        @include md-down {
+          font-size: 3rem;
+        }
       }
     }
   }
@@ -134,13 +147,18 @@
 }
 
 .icon {
-  height: 100%;
   overflow: hidden;
   border: none;
   animation: pulse 4s infinite;
+  margin-top: auto;
+  line-height: 0;
   & span {
-    font-size: 4vw;
+    font-size: 4rem;
     color: #0792ef;
+
+    @include md-down {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -151,6 +169,10 @@
   border: none;
   color: #0792ef;
   background-color: transparent;
+
+  @include md-down {
+    font-size: 1.2rem;
+  }
 
   &:active,
   &:focus {

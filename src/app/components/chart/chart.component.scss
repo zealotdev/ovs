@@ -1,21 +1,52 @@
+@import "../../../assets/scss/media";
+
 .chart {
-  margin-top: 5%;
-  height: 69%;
+  margin-top: 4rem;
+  height: 49rem;
   border-radius: 0.6rem;
   box-shadow: 0.3rem 0.9rem 0.9rem rgba($color: #000000, $alpha: 0.2),
     -0.3rem -0.5rem 0.9rem rgba($color: #000000, $alpha: 0.2);
   padding: 2rem;
 
+  @include xl {
+    height: 56rem;
+  }
+  @include md-up {
+    height: 68rem;
+  }
+  @include lg-up {
+    height: 56rem;
+  }
+  @include sm {
+    height: 30rem;
+    padding: 2rem 0rem;
+  }
+
   &--canvas {
     padding-top: 4rem;
     text-align: center;
 
+    @include sm {
+      padding-top: 1.4rem;
+      .chartjs-render-monitor {
+        height: 16.2rem !important;
+        font-size: 1rem !important;
+      }
+    }
     & .title {
       font-size: 2.4rem;
       color: #06beb6;
       display: block;
       margin-bottom: 2rem;
       transition: all 0.3s ease-in-out;
+
+      @include md-down {
+        font-size: 1.6rem;
+      }
+      @include sm {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
     }
   }
 }

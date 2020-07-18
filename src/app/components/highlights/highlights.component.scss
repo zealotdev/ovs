@@ -1,6 +1,9 @@
+@import "../../../assets/scss/media";
+
 .highlight {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  grid-column-gap: 2rem;
-  height: 20%;
+  @include md-up {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-column-gap: 2rem;
+  }
 }
