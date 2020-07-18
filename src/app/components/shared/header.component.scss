@@ -1,3 +1,5 @@
+@import "../../../assets/scss/media";
+
 header {
   width: 100%;
   height: auto;
@@ -18,9 +20,13 @@ header {
 
     &--links {
       list-style: none;
-      display: flex;
+      display: none;
       margin-left: auto;
       z-index: 1;
+
+      @include md-up {
+        display: flex;
+      }
 
       &-item {
         a {
@@ -34,9 +40,14 @@ header {
           transition: all 0.3s ease;
           text-transform: uppercase;
           color: darken($color: #f3f3f3, $amount: 30);
+          -webkit-tap-highlight-color: transparent;
 
           &:hover {
             color: darken($color: #f3f3f3, $amount: 50);
+            background-color: #eeeeee;
+          }
+          @include lg-down {
+            font-size: 1.4rem;
           }
         }
       }

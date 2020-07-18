@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Result } from './interfaces/result';
 import { resultService } from './services/results.service';
+import { firebaseDataService } from './services/firebase.service';
 
 @Component({
   selector: 'app-root',

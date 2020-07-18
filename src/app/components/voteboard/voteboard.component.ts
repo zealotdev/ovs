@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./voteboard.component.scss'],
 })
 export class VoteboardComponent implements OnInit {
-  verified: boolean = true;
+  verified: boolean = false;
   error: boolean = false;
 
   constructor() {}

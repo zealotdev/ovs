@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Result } from '../interfaces/result';
 import { chartData } from '../interfaces/chart-data';
-import { RESULTS, ELECTIONS } from '../data/results-mock-data';
+import { ELECTIONS } from '../data/results-mock-data';
 import { Observable, of } from 'rxjs';
 import { Election } from '../interfaces/election';
 
