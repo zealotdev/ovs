@@ -1,5 +1,8 @@
+@import "../../../assets/scss/media";
+
 .voteboard {
   position: relative;
+  height: 74rem;
   padding: 2rem;
   background: #de6262; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -14,6 +17,18 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 0.6rem;
   box-shadow: 0.3rem 0.9rem 0.9rem rgba($color: #000000, $alpha: 0.2);
+
+  @include lg-down {
+    margin-top: 4rem;
+    height: 67rem;
+  }
+
+  @include md-down {
+    height: 60rem;
+  }
+  @include sm {
+    margin-bottom: 55px;
+  }
 
   &--box {
     position: absolute;

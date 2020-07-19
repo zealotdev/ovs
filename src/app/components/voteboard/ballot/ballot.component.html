@@ -25,11 +25,11 @@
       <div class="cands--list">
         <span
           class="cands--list-item"
-          *ngFor="let cand of selectedEl"
+          *ngFor="let cand of selectedEl; let i = index"
           (click)="onSelect(cand)"
           [class.selected]="cand.name == candidateName"
         >
-          <span class="cands--list-item_badge"></span>
+          <span class="cands--list-item_badge">{{ i + 1 }}</span>
           <span class="cands--list-item_cand">{{ cand.name }}</span></span
         >
       </div>
