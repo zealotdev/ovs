@@ -1,0 +1,14 @@
+@import "../../../assets/scss/media";
+
+.main--wrapper {
+  margin: 2rem;
+  @include lg-up {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 2rem;
+    padding-bottom: 4rem;
+  }
+  @include xl {
+    padding-bottom: 2rem;
+  }
+}
