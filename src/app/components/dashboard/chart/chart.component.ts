@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 
 import { ChartsConfig } from './chart.config';
-import { Result } from 'src/app/interfaces/result';
-import { electionDataService } from 'src/app/services/election.service';
+import { ElectionData } from 'src/app/interfaces/election-data';
 import { resultService } from 'src/app/services/results.service';
 
 @Component({
@@ -22,30 +21,36 @@ export class ChartComponent implements OnInit, OnDestroy {
 
   public barChartLabels = ['Candidates'];
   public barChartType = 'bar';
-  public barChartData: Result[] = [];
+  public barChartData: ElectionData[] = [];
 
-  constructor(
-    private _electionDataService: electionDataService,
-    private _resultsService: resultService
-  ) {}
+  constructor(private _resultsService: resultService) {}
 
   ngOnInit() {
-    this._electionDataService.getElectionData().subscribe((data) => {
-      this.electionID = data[0].id;
+    this._resultsService.getElectionData().subscribe((data) => {
       this.electionTitle = data[0].electionType;
-    });
-
-    this._resultsService.getResults(this.electionID).subscribe((data) => {
-      this.barChartData = data;
+      this.electionID = data[0].id;
+      var candidates = data.find((el) => el.id == this.electionID).candidates;
+      candidates.forEach((candidate) => {
+        this.barChartData.push({
+          data: [candidate.votes],
+          label: candidate.name,
+        });
+      });
     });
   }
 
   onSelected(id: number) {
     this.barChartData = [];
     // Set data as of selected election
-    this._electionDataService.getElectionData().subscribe((data) => {
-      this.barChartData = data.find((ele) => ele.id == id).results;
+    this._resultsService.getElectionData().subscribe((data) => {
       this.electionTitle = data.find((ele) => ele.id == id).electionType;
+      var candidates = data.find((el) => el.id == id).candidates;
+      candidates.forEach((candidate) => {
+        this.barChartData.push({
+          data: [candidate.votes],
+          label: candidate.name,
+        });
+      });
     });
   }
 

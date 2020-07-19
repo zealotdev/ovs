@@ -4,13 +4,18 @@
 
     <ul class="nav--links">
       <li class="nav--links-item">
-        <a href="#">dashboard</a>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >dashboard</a
+        >
       </li>
       <li class="nav--links-item">
         <a href="#">profiles</a>
       </li>
       <li class="nav--links-item">
-        <a href="#">Live Chat</a>
+        <a routerLink="/chat" routerLinkActive="active">Chat Room</a>
       </li>
       <li class="nav--links-item">
         <a href="#">Report Issues</a>

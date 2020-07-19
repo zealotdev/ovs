@@ -3,7 +3,7 @@ export const ELECTIONS = [
     id: 1,
     electionType: 'president',
     active: true,
-    startTime: new Date().getHours(),
+    startTime: 3,
     candidates: [
       {
         id: 1,
@@ -35,7 +35,7 @@ export const ELECTIONS = [
     id: 2,
     electionType: 'women representative',
     active: true,
-    startTime: new Date().getHours(),
+    startTime: 3,
     candidates: [
       {
         id: 1,
@@ -61,7 +61,7 @@ export const ELECTIONS = [
     id: 3,
     electionType: 'speaker',
     active: true,
-    startTime: new Date().getHours(),
+    startTime: 3,
     candidates: [
       {
         id: 1,
@@ -87,7 +87,7 @@ export const ELECTIONS = [
     id: 4,
     electionType: 'class representative',
     active: true,
-    startTime: new Date().getHours(),
+    startTime: 3,
     candidates: [
       {
         id: 1,

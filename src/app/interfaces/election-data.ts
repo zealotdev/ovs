@@ -1,4 +1,4 @@
-export interface Result {
+export interface ElectionData {
   data: number[];
   label: string;
 }

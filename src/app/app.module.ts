@@ -24,10 +24,10 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
   declarations: [AppComponent, HeaderComponent, MobileNavComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ChatModule,
     DashboardModule,
+    AppRoutingModule,
     // AngularFireModule.initializeApp(environment.firebaseConfig),
     // AngularFireDatabaseModule,
   ],
