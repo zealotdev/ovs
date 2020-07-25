@@ -9,6 +9,7 @@
       Standings</span
     >
     <canvas
+      *ngIf="dataIsAvailable"
       baseChart
       [datasets]="barChartData"
       [labels]="barChartLabels"

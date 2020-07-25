@@ -1,129 +1,127 @@
 {
-  "electionData": {
-    "electionList": [
-      {
-        "id": 1,
-        "electionType": "president",
-        "active": true,
-        "startTime": "2020-07-18T08:53:01.996Z",
-        "candidates": [
-          {
-            "id": 1,
-            "name": "Jorge D.",
-            "bio": "Amazing coder",
-            "image": "assets/img/logo.png",
-            "votes": 345
-          },
-          {
-            "id": 2,
-            "name": "Mark Twain",
-            "bio": "The Philosopher",
-            "image": "assets/img/logo.png",
-            "votes": 125
-          },
-          {
-            "id": 3,
-            "name": "John Doe",
-            "bio": "No body cares who he is",
-            "image": "assets/img/logo.png",
-            "votes": 230
-          },
-          {
-            "id": 4,
-            "name": "Foo Bar",
-            "bio": "What is this",
-            "image": "assets/img/logo.png",
-            "votes": 300
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "electionType": "women representative",
-        "active": true,
-        "startTime": "2020-07-18T08:53:01.996Z",
-        "candidates": [
-          {
-            "id": 1,
-            "name": "Vicky V",
-            "bio": "Ambitious lady",
-            "image": "assets/img/logo.png",
-            "votes": 120
-          },
-          {
-            "id": 2,
-            "name": "Mary J",
-            "bio": "The militia",
-            "image": "assets/img/logo.png",
-            "votes": 85
-          },
-          {
-            "id": 3,
-            "name": "Sabby T",
-            "bio": "The Ustadhat",
-            "image": "assets/img/logo.png",
-            "votes": 98
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "electionType": "speaker",
-        "active": true,
-        "startTime": "2020-07-18T08:53:01.996Z",
-        "candidates": [
-          {
-            "id": 1,
-            "name": "Jere J.",
-            "bio": "You go the CR",
-            "image": "assets/img/logo.png",
-            "votes": 13
-          },
-          {
-            "id": 2,
-            "name": "Aziz",
-            "bio": "The blur monster",
-            "image": "assets/img/logo.png",
-            "votes": 23
-          },
-          {
-            "id": 3,
-            "name": "Vicky V.",
-            "bio": "Ambitious lady",
-            "image": "assets/img/logo.png",
-            "votes": 24
-          }
-        ]
-      },
-      {
-        "id": 4,
-        "electionType": "class representative",
-        "active": true,
-        "startTime": "2020-07-18T08:53:01.996Z",
-        "candidates": [
-          {
-            "id": 1,
-            "name": "Jere J.",
-            "bio": "Here go the CR",
-            "image": "assets/img/logo.png",
-            "votes": 23
-          },
-          {
-            "id": 2,
-            "name": "Aziz",
-            "bio": "The blur monster",
-            "image": "assets/img/logo.png",
-            "votes": 19
-          },
-          {
-            "id": 3,
-            "name": "Vicky V.",
-            "bio": "Ambitious lady",
-            "image": "assets/img/logo.png",
-            "votes": 30
-          }
-        ]
-      }
-    ]
-  }
+  "electionList": [
+    {
+      "id": 1,
+      "electionType": "president",
+      "active": true,
+      "startTime": "2020-07-18T08:53:01.996Z",
+      "candidates": [
+        {
+          "id": 1,
+          "name": "Jorge D.",
+          "bio": "Amazing coder",
+          "image": "assets/img/logo.png",
+          "votes": 345
+        },
+        {
+          "id": 2,
+          "name": "Mark Twain",
+          "bio": "The Philosopher",
+          "image": "assets/img/logo.png",
+          "votes": 125
+        },
+        {
+          "id": 3,
+          "name": "John Doe",
+          "bio": "No body cares who he is",
+          "image": "assets/img/logo.png",
+          "votes": 230
+        },
+        {
+          "id": 4,
+          "name": "Foo Bar",
+          "bio": "What is this",
+          "image": "assets/img/logo.png",
+          "votes": 300
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "electionType": "women representative",
+      "active": true,
+      "startTime": "2020-07-18T08:53:01.996Z",
+      "candidates": [
+        {
+          "id": 1,
+          "name": "Vicky V",
+          "bio": "Ambitious lady",
+          "image": "assets/img/logo.png",
+          "votes": 120
+        },
+        {
+          "id": 2,
+          "name": "Mary J",
+          "bio": "The militia",
+          "image": "assets/img/logo.png",
+          "votes": 85
+        },
+        {
+          "id": 3,
+          "name": "Sabby T",
+          "bio": "The Ustadhat",
+          "image": "assets/img/logo.png",
+          "votes": 98
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "electionType": "speaker",
+      "active": true,
+      "startTime": "2020-07-18T08:53:01.996Z",
+      "candidates": [
+        {
+          "id": 1,
+          "name": "Jere J.",
+          "bio": "You go the CR",
+          "image": "assets/img/logo.png",
+          "votes": 13
+        },
+        {
+          "id": 2,
+          "name": "Aziz",
+          "bio": "The blur monster",
+          "image": "assets/img/logo.png",
+          "votes": 23
+        },
+        {
+          "id": 3,
+          "name": "Vicky V.",
+          "bio": "Ambitious lady",
+          "image": "assets/img/logo.png",
+          "votes": 24
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "electionType": "class representative",
+      "active": true,
+      "startTime": "2020-07-18T08:53:01.996Z",
+      "candidates": [
+        {
+          "id": 1,
+          "name": "Jere J.",
+          "bio": "Here go the CR",
+          "image": "assets/img/logo.png",
+          "votes": 23
+        },
+        {
+          "id": 2,
+          "name": "Aziz",
+          "bio": "The blur monster",
+          "image": "assets/img/logo.png",
+          "votes": 19
+        },
+        {
+          "id": 3,
+          "name": "Vicky V.",
+          "bio": "Ambitious lady",
+          "image": "assets/img/logo.png",
+          "votes": 30
+        }
+      ]
+    }
+  ]
 }

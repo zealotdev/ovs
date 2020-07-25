@@ -1,0 +1,27 @@
+<form [formGroup]="messageForm" (ngSubmit)="onSend()">
+  Enter the message:
+  <input type="text" formControlName="message" />
+  <button type="submit">send</button>
+</form>
+
+<button (click)="exitChatRoom()">Exit</button>
+<div>
+  {{ nickname }}
+</div>
+<div>
+  {{ roomname }}
+</div>
+<div>
+  <ul>
+    <li *ngFor="let user of users">
+      {{ user.nickname }}
+    </li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let chat of chats">
+      {{ chat.nickname }} => {{ chat.message }}
+    </li>
+  </ul>
+</div>

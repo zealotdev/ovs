@@ -1,0 +1,24 @@
+<div class="main--wrapper">
+  <div class="main--wrapper-content__user">
+    <span>{{ nickname }} AnonCodex</span>
+    <button (click)="logOut()">logout</button>
+  </div>
+  <div class="main--wrapper-content__rooms">
+    <div class="main--wrapper-content__rooms-head">
+      <h2>Room List</h2>
+      <button routerLink="/chat/addroom">add room</button>
+    </div>
+    <ul class="main--wrapper-content__rooms-list">
+      <!-- <li *ngFor="let room of rooms">
+    <span>{{ room.name }} </span>
+    <button (click)="enterChatRoom(room.name)">enter room</button>
+  </li> -->
+      <li>
+        <span>Room Name</span>
+        <button (click)="enterChatRoom('another room')" class="btn ripple">
+          enter room
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

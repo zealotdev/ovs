@@ -96,54 +96,29 @@
 }
 
 .btn {
-  border-radius: 0.4rem;
-  padding: 0.6rem 2rem;
-  font-size: 1.8rem;
-  letter-spacing: 0.1rem;
-  border: 0;
-  background: #06beb6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #48b1bf,
-    #06beb6
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #48b1bf,
-    #06beb6
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: #fff;
+  border: none;
+  border-radius: 2px;
+  padding: 0.9rem 1.8rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 0.4rem 0;
-
-  &__select {
-    font-size: 1.4rem;
-    padding: 0.2rem 0.4rem;
-  }
-  &:hover {
-    transform: scale(1.005);
-    background: lighten(#06beb6, 10); /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      rgba(72, 177, 191, 0.9),
-      rgba(6, 190, 181, 0.9)
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      rgba(72, 177, 191, 0.9),
-      rgba(6, 190, 181, 0.9)
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    box-shadow: 0 0.1rem 0.9rem rgba($color: #000000, $alpha: 0.3);
-    transform: scale(0.975);
-  }
-  &:focus {
-    outline: none;
-  }
-  &:active {
-    box-shadow: 0 0.05rem 0.9rem rgba($color: #000000, $alpha: 0.3);
-    transform: scale(0.95);
-  }
+  color: white;
+  background-color: #2196f3;
+  box-shadow: 0 0 4px #999;
+  outline: none;
+}
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%)
+    center/15000%;
+}
+.ripple:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0s;
 }
 
 .icon {

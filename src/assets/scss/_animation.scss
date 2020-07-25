@@ -30,3 +30,21 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0.1rem rgba($color: #1997f0, $alpha: 0.9);
+  }
+  25% {
+    box-shadow: 0 0 0.4rem rgba($color: #1997f0, $alpha: 0.9);
+  }
+  50% {
+    box-shadow: 0 0 4rem rgba($color: #1997f0, $alpha: 0.9);
+  }
+  75% {
+    box-shadow: 0 0 0.4rem rgba($color: #1997f0, $alpha: 0.9);
+  }
+  100% {
+    box-shadow: 0 0 0.1rem rgba($color: #1997f0, $alpha: 0.9);
+  }
+}

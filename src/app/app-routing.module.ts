@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { ChatRoutingModule } from './components/chat/chat-routing.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent,
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
   },
   {
-    path: 'chat',
-    component: ChatComponent,
+    path: 'dashboard',
+    component: DashboardComponent,
   },
 ];
 
