@@ -107,6 +107,21 @@
   box-shadow: 0 0 4px #999;
   outline: none;
 }
+.btn-round {
+  border: none;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 500;
+  height: 4rem;
+  width: 4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  background-color: #fefefe;
+  box-shadow: 0 0 4px #999;
+  outline: none;
+}
 .ripple {
   background-position: center;
   transition: background 0.8s;
@@ -140,6 +155,15 @@
 .icon__mod-1 {
   margin-right: 0.4rem;
 }
+.icon__mod-2 {
+  font-size: 2rem;
+  color: #0792ef;
+  transform: all 0.5s ease;
+
+  &:hover {
+    color: #f3f3f3;
+  }
+}
 .dropdown {
   border: none;
   color: #0792ef;
@@ -159,4 +183,9 @@
   color: #5f7d8c;
   font-size: 2rem;
   font-family: "Damion", cursive !important;
+}
+.nickname {
+  color: #47a7f5;
+  font-size: 1.5rem;
+  font-weight: 500;
 }

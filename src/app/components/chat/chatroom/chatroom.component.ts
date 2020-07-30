@@ -1,8 +1,16 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  Input,
+  Output,
+} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import * as firebase from 'firebase';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { EventEmitter } from '@angular/core';
 
 export const snapshotToArr = (snapshot: any) => {
   const returnArr = [];
@@ -23,7 +31,9 @@ export const snapshotToArr = (snapshot: any) => {
 export class ChatroomComponent implements OnInit {
   @ViewChild('chatContent') chatContent: ElementRef;
   nickname = '';
-  roomname = '';
+  // roomname = '';
+  @Input() roomname;
+  @Output() exitRoom = new EventEmitter<boolean>();
   message = '';
   users = [];
   chats = [];
@@ -38,30 +48,30 @@ export class ChatroomComponent implements OnInit {
 
   ngOnInit(): void {
     this.nickname = localStorage.getItem('nickname');
-    this.roomname = this._aRoute.snapshot.params.roomname;
+    // this.roomname = this._aRoute.snapshot.params.roomname;
 
     this.messageForm = new FormGroup({
       message: new FormControl(null, Validators.required),
     });
 
-    firebase
-      .database()
-      .ref('chatData/chats/')
-      .on('value', (snapshot) => {
-        this.chats = [];
-        this.chats = snapshotToArr(snapshot);
-        console.log(this.chats);
-      });
+    // firebase
+    //   .database()
+    //   .ref('chatData/chats/')
+    //   .on('value', (snapshot) => {
+    //     this.chats = [];
+    //     this.chats = snapshotToArr(snapshot);
+    //     console.log(this.chats);
+    //   });
 
-    firebase
-      .database()
-      .ref('chatData/roomusers/')
-      .orderByChild('roomname')
-      .equalTo(this.roomname)
-      .on('value', (snapshot) => {
-        const roomusers = snapshotToArr(snapshot);
-        this.users = roomusers.filter((user) => user.status === 'online');
-      });
+    // firebase
+    //   .database()
+    //   .ref('chatData/roomusers/')
+    //   .orderByChild('roomname')
+    //   .equalTo(this.roomname)
+    //   .on('value', (snapshot) => {
+    //     const roomusers = snapshotToArr(snapshot);
+    //     this.users = roomusers.filter((user) => user.status === 'online');
+    //   });
   }
 
   onSend() {
@@ -122,7 +132,7 @@ export class ChatroomComponent implements OnInit {
           userRef.update({ status: 'offline' });
         }
       });
-
-    this._router.navigate(['/chat/roomlist']);
+    this.exitRoom.emit(true);
+    // this.roomname = '';
   }
 }

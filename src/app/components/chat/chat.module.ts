@@ -9,6 +9,7 @@ import { AddroomComponent } from './addroom/addroom.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { ChatRoutingModule } from './chat-routing.module';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
+    BrowserModule,
     AngularFireDatabaseModule,
   ],
   exports: [ChatComponent, ReactiveFormsModule, FormsModule],

@@ -22,10 +22,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['chat/roomlist']);
     }
     this.loginForm = new FormGroup({
-      nickname: new FormControl(null, [
-        Validators.required,
-        this.emptyField.bind(this),
-      ]),
+      nickname: new FormControl(null, [Validators.required]),
     });
   }
 

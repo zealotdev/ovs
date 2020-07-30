@@ -1,24 +1,70 @@
 <div class="main--wrapper">
-  <div class="main--wrapper-content__user">
-    <span>{{ nickname }} AnonCodex</span>
-    <button (click)="logOut()">logout</button>
-  </div>
-  <div class="main--wrapper-content__rooms">
-    <div class="main--wrapper-content__rooms-head">
-      <h2>Room List</h2>
-      <button routerLink="/chat/addroom">add room</button>
+  <div class="main--wrapper-dashboard">
+    <div class="main--wrapper-dashboard--info">
+      <button class="ripple btn-round" (click)="logOut()">
+        <i class="arrow_back icon__mod-2"></i>
+      </button>
+      <div class="main--wrapper-dashboard--info__user-info">
+        <span
+          >Welcome aboard
+          <br />
+          <span class="nickname">{{ nickname }} anoncodex</span></span
+        >
+      </div>
+      <div class="main--wrapper-dashboard--info__rooms">
+        <div class="main--wrapper-dashboard--info__rooms-head">
+          <span class="title">Room List</span>
+          <a class="add--room" routerLink="/chat/addroom">
+            <i class="icon_plus_alt2"></i>
+            add room</a
+          >
+        </div>
+        <ul class="main--wrapper-dashboard--info__rooms-list">
+          <!-- <li *ngFor="let room of rooms">
+        <span>{{ room.name }} </span>
+        <button (click)="enterChatRoom(room.name)">enter room</button>
+      </li> -->
+          <li (click)="enterChatRoom('room one')">
+            <span
+              >Room One
+              <i class="icon_ribbon"></i>
+            </span>
+
+            <div class="enter--btn">
+              <span>active</span>
+            </div>
+          </li>
+          <li>
+            <span>Room Two </span>
+            <div class="enter--btn">
+              <span>click to enter</span>
+            </div>
+          </li>
+          <li>
+            <span>Room Three </span>
+            <div class="enter--btn">
+              <span>click to enter</span>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-    <ul class="main--wrapper-content__rooms-list">
-      <!-- <li *ngFor="let room of rooms">
-    <span>{{ room.name }} </span>
-    <button (click)="enterChatRoom(room.name)">enter room</button>
-  </li> -->
-      <li>
-        <span>Room Name</span>
-        <button (click)="enterChatRoom('another room')" class="btn ripple">
-          enter room
-        </button>
-      </li>
-    </ul>
+    <div class="main--wrapper-dashboard--WIO">
+      <span class="title">
+        Who is online
+      </span>
+      <div class="main--wrapper-dashboard--WIO__online-box">
+        <!-- <span>John Doe</span><span>John Doe</span><span>John Doe</span
+        ><span>John Doe</span><span>John Doe</span><span>John Doe</span
+        ><span>John Doe</span><span>John Doe</span><span>John Doe</span
+        ><span>John Doe</span><span>John Doe</span><span>John Doe</span
+        ><span>John Doe</span> -->
+      </div>
+    </div>
   </div>
+  <app-chatroom
+    *ngIf="choosedRoom"
+    [roomname]="choosedRoom"
+    (exitRoom)="onExit($event)"
+  ></app-chatroom>
 </div>

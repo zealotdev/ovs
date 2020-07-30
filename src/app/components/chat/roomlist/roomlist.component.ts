@@ -20,10 +20,11 @@ export const snapshotToArr = (snapshot: any) => {
   styleUrls: ['./roomlist.component.scss'],
 })
 export class RoomlistComponent implements OnInit {
-  nickname = '';
+  nickname = 'anoncodex';
   displayedColumns: string[] = ['roomname'];
   isLoading: boolean = true;
   rooms;
+  choosedRoom: string;
   constructor(private _router: Router, private datePipe: DatePipe) {}
 
   ngOnInit(): void {
@@ -37,6 +38,7 @@ export class RoomlistComponent implements OnInit {
   }
 
   enterChatRoom(roomname: string) {
+    this.choosedRoom = roomname;
     // const chat = {
     //   roomname: '',
     //   nickname: '',
@@ -78,11 +80,17 @@ export class RoomlistComponent implements OnInit {
     //       });
     //     }
     //   });
-    this._router.navigate(['chat/chatroom', roomname]);
+    // this._router.navigate(['chat/chatroom', roomname]);
   }
 
   logOut(): void {
     localStorage.removeItem('nickname');
     this._router.navigate(['/chat/login']);
+  }
+
+  onExit(exit: boolean) {
+    if (exit) {
+      this.choosedRoom = '';
+    }
   }
 }
