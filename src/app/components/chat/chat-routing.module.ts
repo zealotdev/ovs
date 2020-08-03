@@ -2,7 +2,6 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RoomlistComponent } from './roomlist/roomlist.component';
-import { AddroomComponent } from './addroom/addroom.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { ChatComponent } from './chat.component';
 
@@ -24,10 +23,7 @@ const routes: Routes = [
         path: 'roomlist',
         component: RoomlistComponent,
       },
-      {
-        path: 'addroom',
-        component: AddroomComponent,
-      },
+
       {
         path: 'chatroom/:roomname',
         component: ChatroomComponent,

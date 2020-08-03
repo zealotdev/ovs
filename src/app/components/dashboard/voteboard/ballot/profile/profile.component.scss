@@ -1,0 +1,62 @@
+.mat-dialog-container {
+  padding: 0 !important;
+}
+.profile--card {
+  padding: 0rem;
+  position: relative;
+  max-width: 40rem;
+
+  &-closeDialog {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: #fefefe;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #2196f3;
+    box-shadow: 0 0 4px #999;
+    outline: none;
+    z-index: 10;
+  }
+
+  &-pic {
+    & img {
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      max-height: 40rem;
+      width: 100%;
+    }
+  }
+  &-content {
+    padding: 2rem;
+    color: #2196f3;
+  }
+  &-name {
+    font-size: 2rem;
+  }
+  &-nickname {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+  }
+  &-from {
+    @extend .profile--card-nickname;
+  }
+  &-bio {
+    color: #656379;
+  }
+}
+.hint {
+  color: #656379;
+  font-size: 1.6rem;
+  font-weight: 600;
+}

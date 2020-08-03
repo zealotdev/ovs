@@ -1,24 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { electionDataService } from 'src/app/services/election.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ProfileComponent } from './profile/profile.component';
+import * as firebase from 'firebase';
 
+export const electionSnapshotToArr = (snapshot: any) => {
+  var arr = [];
+  snapshot.forEach((snap) => {
+    var item = snap.val();
+    arr.push(item);
+  });
+  return arr;
+};
 @Component({
   selector: 'app-ballot',
   templateUrl: './ballot.component.html',
   styleUrls: ['./ballot.component.scss'],
 })
 export class BallotComponent implements OnInit {
-  elections = [];
+  elections = [{}];
   electionType: string;
-  selectedEl;
+  candidates;
   candidateName: string;
   candObj;
   electionID: number;
+  dbRef = firebase.database();
 
-  constructor(private _electionDataService: electionDataService) {}
+  constructor(
+    private _electionDataService: electionDataService,
+    private matDialog: MatDialog
+  ) {}
 
   ngOnInit() {
-    this._electionDataService.getElectionData().subscribe((data) => {
-      this.elections = data;
+    this.dbRef.ref('electionList/').once('value', (snapshot) => {
+      this.elections = snapshot.val();
     });
 
     this.onSelection(0);
@@ -27,15 +42,19 @@ export class BallotComponent implements OnInit {
     this.candidateName = '';
     if (id != 0) {
       this.electionID = id;
-      this._electionDataService.getElectionData().subscribe((data) => {
-        this.selectedEl = data.find((el) => el.id == id).candidates;
-        this.electionType = data.find((el) => el.id == id).electionType;
+      this.dbRef.ref('electionList').once('value', (snapshot) => {
+        var electionsArray = electionSnapshotToArr(snapshot);
+        var selectedEl = electionsArray.find((el) => el.id == id);
+
+        this.candidates = selectedEl.candidates;
+        this.electionID = selectedEl.id;
+        this.electionType = selectedEl.electionType;
       });
     } else {
-      this._electionDataService.getElectionData().subscribe((data) => {
-        this.selectedEl = data[0].candidates;
-        this.electionID = data[0].id;
-        this.electionType = data[0].electionType;
+      this.dbRef.ref('electionList/0').once('value', (snapshot) => {
+        this.candidates = snapshot.val().candidates;
+        this.electionID = snapshot.val().id;
+        this.electionType = snapshot.val().electionType;
       });
     }
   }
@@ -44,6 +63,14 @@ export class BallotComponent implements OnInit {
     this.candidateName = cand.name;
   }
   onVote() {
-    this._electionDataService.vote(this.electionID, this.candObj.id);
+    console.log(this.electionID, this.electionType, this.candObj);
+  }
+  showProfile(id) {
+    var candProfile = this.candidates.find((el) => el.id === id);
+    this.matDialog.open(ProfileComponent, {
+      disableClose: true,
+      panelClass: 'no-padding-dialog',
+      data: candProfile,
+    });
   }
 }

@@ -1,0 +1,23 @@
+<div class="profile--card">
+  <button class="profile--card-closeDialog ripple" (click)="closeDialog()">
+    X
+  </button>
+  <div class="profile--card-pic">
+    <img src="{{ data.image }}" />
+  </div>
+  <div class="profile--card-content">
+    <div class="profile--card-name">
+      <span class="hint">Name: </span> {{ data.name }}
+    </div>
+    <div class="profile--card-nickname">
+      <span class="hint">Nickname: </span> {{ data.nickname }}
+    </div>
+    <div class="profile--card-from">
+      <span class="hint">Form: </span> {{ data.course | titlecase }} level
+      {{ data.level }}
+    </div>
+    <div class="profile--card-bio">
+      <span class="hint">Bio: </span> {{ data.bio }}
+    </div>
+  </div>
+</div>

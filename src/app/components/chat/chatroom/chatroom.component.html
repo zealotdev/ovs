@@ -1,65 +1,51 @@
-<!-- <form [formGroup]="messageForm" (ngSubmit)="onSend()">
-  Enter the message:
-  <input type="text" formControlName="message" />
-  <button type="submit">send</button>
-</form>
-
-<button (click)="exitChatRoom()">Exit</button>
-<div>
-  {{ nickname }}
-</div>
-<div>
-  {{ roomname }}
-</div>
-<div>
-  <ul>
-    <li *ngFor="let user of users">
-      {{ user.nickname }}
-    </li>
-  </ul>
-</div>
-<div>
-  <ul>
-    <li *ngFor="let chat of chats">
-      {{ chat.nickname }} => {{ chat.message }}
-    </li>
-  </ul>
-</div> -->
 <div class="chat--box">
   <div class="chat--box__header">
     <span class="leave ripple" (click)="exitChatRoom()">
       <i class="arrow_back"></i>
       leave
     </span>
-    <span class="ds__roomname">{{ roomname }}</span>
-    <span class="ds__created-by">
-      Created by <span class="nickname--mod_2">george</span></span
-    >
+    <span class="ds__roomname">{{ roomname + " chat room" | titlecase }}</span>
   </div>
-  <div class="chat--box__content">
-    <blockquote class="chat--bubble__others">
-      <p class="chat--bubble-message">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
-        exercitationem voluptatem consectetur voluptate totam possimus.
-      </p>
-      <cite>
-        John Doe
-      </cite>
-    </blockquote>
-    <blockquote class="chat--bubble__me">
-      <p class="chat--bubble-message">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
-        exercitationem voluptatem consectetur voluptate totam possimus.
-      </p>
-      <cite>
-        Me
-      </cite>
-    </blockquote>
+  <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+  <div
+    class="chat--box__content"
+    #chatContent
+    (scroll)="onScroll()"
+    *ngIf="!isLoading"
+  >
+    <ng-template ngFor let-chat [ngForOf]="chats">
+      <blockquote
+        *ngIf="chat.type === 'message'"
+        [ngClass]="{
+          'chat--bubble__me': chat.nickname === nickname,
+          'chat--bubble__others': chat.nickname !== nickname
+        }"
+      >
+        <span class="timestamp">{{ chat.date }}</span>
+        <p class="chat--bubble-message">
+          {{ chat.message }}
+        </p>
+        <cite>
+          {{ chat.nickname === nickname ? "me" : chat.nickname }}
+        </cite>
+      </blockquote>
+      <div class="status" *ngIf="chat.type !== 'message'">
+        {{ chat.message }}
+        <span class="timestamp">{{ chat.date }}</span>
+      </div>
+    </ng-template>
   </div>
   <div class="chat--box__message-box">
-    <form>
-      <textarea></textarea>
-
+    <form [formGroup]="messageForm" (ngSubmit)="onSend()">
+      <textarea formControlName="message"> </textarea>
+      <span
+        class="emoji-picker"
+        (click)="toggled = !toggled"
+        [(emojiPickerIf)]="toggled"
+        [emojiPickerDirection]="'bottom' || 'top' || 'left' || 'right'"
+        (emojiPickerSelect)="handleSelection($event)"
+        >😄</span
+      >
       <button class="chat--btn container" type="submit">
         <svg enable-background="new 0 0 24 24" viewBox="0 0 24 24">
           <g>

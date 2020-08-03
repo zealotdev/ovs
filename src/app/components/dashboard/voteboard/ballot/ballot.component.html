@@ -25,13 +25,16 @@
       <div class="cands--list">
         <span
           class="cands--list-item"
-          *ngFor="let cand of selectedEl; let i = index"
+          *ngFor="let cand of candidates; let i = index"
           (click)="onSelect(cand)"
           [class.selected]="cand.name == candidateName"
         >
           <span class="cands--list-item_badge">{{ i + 1 }}</span>
-          <span class="cands--list-item_cand">{{ cand.name }}</span></span
-        >
+          <span class="cands--list-item_cand">{{ cand.name }}</span>
+          <button class="btn-profile" (click)="showProfile(cand.id)">
+            profile
+          </button>
+        </span>
       </div>
     </div>
     <div class="bottom">
@@ -41,7 +44,7 @@
         <span>{{ electionType | titlecase }}</span
         ><span class="quote">"</span>
       </div>
-      <button class="btn vote__btn" (click)="onVote()">
+      <button class="btn vote__btn ripple" (click)="onVote()">
         Vote
       </button>
     </div>

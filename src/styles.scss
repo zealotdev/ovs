@@ -3,3 +3,16 @@
 @import "assets/scss/base";
 @import "assets/scss/animation";
 @import "assets/scss/utils";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.no-padding-dialog .mat-dialog-container {
+  padding: 0;
+}

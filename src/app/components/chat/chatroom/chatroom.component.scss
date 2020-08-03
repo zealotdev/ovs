@@ -21,6 +21,8 @@
   }
   &__content {
     overflow-y: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: none;
     padding: 1rem 2rem;
     height: 80%;
 
@@ -51,7 +53,7 @@
           display: block;
           position: absolute;
           left: 3rem;
-          bottom: -25px;
+          bottom: -1.3rem;
           -webkit-transform-origin: center;
           transform-origin: center;
           -webkit-transform: rotate(90deg) skew(-25deg)
@@ -60,8 +62,8 @@
         }
         & cite {
           position: absolute;
-          bottom: -2rem;
-          left: 4.5rem;
+          bottom: -2.5rem;
+          left: 3rem;
           font-size: 1rem;
           font-style: normal;
           font-weight: 300;
@@ -94,13 +96,14 @@
           display: block;
           position: absolute;
           right: 3rem;
-          bottom: -25px;
-          transform: rotate(90deg) skew(-25deg) translateY(16.6666666667px);
+          bottom: -2.8rem;
+          transform: rotate(180deg) skew(-25deg) translateY(16.6666666667px)
+            scale(-1);
         }
         & cite {
           position: absolute;
-          bottom: -2rem;
-          right: 2.5rem;
+          bottom: -2.7rem;
+          right: 3rem;
           font-size: 1rem;
           font-style: normal;
           font-weight: 300;
@@ -121,6 +124,7 @@
     left: 0;
     padding: 1rem 2rem;
     width: 100%;
+
     & form {
       width: 100%;
       align-items: center;
@@ -135,12 +139,23 @@
         font-family: Arial, Helvetica, sans-serif;
         outline: none;
         color: darken($color: #979797, $amount: 1);
-        letter-spacing: 0.125rem;
+        letter-spacing: 0.1rem;
         font-size: 1.4rem;
 
         &:focus {
           outline: none;
         }
+      }
+      & .emoji-picker {
+        margin: 0.4rem;
+        cursor: pointer;
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: darken(#8ca8d8, 5);
       }
       & button.chat--btn {
         border: none;
@@ -157,6 +172,10 @@
 
         &:hover {
           background-color: lighten(#668bcb, 20);
+        }
+        &:active,
+        &:focus {
+          outline: none;
         }
       }
     }
@@ -187,4 +206,14 @@
   padding: 0.4rem 0.5rem;
   color: #f3f3f3;
   cursor: pointer;
+}
+.status {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: darken($color: #668bcb, $amount: 20);
+  text-align: center;
+}
+.timestamp {
+  @extend .status;
+  font-size: 1rem;
 }

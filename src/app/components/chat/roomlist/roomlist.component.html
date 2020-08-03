@@ -8,57 +8,64 @@
         <span
           >Welcome aboard
           <br />
-          <span class="nickname">{{ nickname }} anoncodex</span></span
+          <span class="nickname-text">{{ nickname }} </span></span
         >
       </div>
       <div class="main--wrapper-dashboard--info__rooms">
-        <div class="main--wrapper-dashboard--info__rooms-head">
-          <span class="title">Room List</span>
-          <a class="add--room" routerLink="/chat/addroom">
-            <i class="icon_plus_alt2"></i>
-            add room</a
-          >
-        </div>
-        <ul class="main--wrapper-dashboard--info__rooms-list">
-          <!-- <li *ngFor="let room of rooms">
-        <span>{{ room.name }} </span>
-        <button (click)="enterChatRoom(room.name)">enter room</button>
-      </li> -->
-          <li (click)="enterChatRoom('room one')">
-            <span
-              >Room One
-              <i class="icon_ribbon"></i>
-            </span>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span class="title">Room List</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul class="main--wrapper-dashboard--info__rooms-list">
+            <li
+              *ngFor="let room of rooms"
+              (click)="enterChatRoom(room.name)"
+              [class.active]="room.name === choosedRoom"
+            >
+              <span
+                >{{ room.name }}
+                <i class="icon_ribbon" *ngIf="room.name === choosedRoom"></i>
+              </span>
 
-            <div class="enter--btn">
-              <span>active</span>
+              <div class="enter--btn">
+                <span *ngIf="room.name === choosedRoom" class="activeStatus"
+                  >active</span
+                >
+                <span *ngIf="room.name !== choosedRoom" class="inactiveStatus"
+                  >inactive</span
+                >
+                <button
+                  *ngIf="room.createdBy === nickname"
+                  mat-icon-button
+                  [matMenuTriggerFor]="menu"
+                  aria-label="Example icon-button with a menu"
+                >
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button
+                    mat-menu-item
+                    (click)="onDelete(room.name)"
+                    class="delete"
+                  >
+                    <mat-icon>clear</mat-icon>
+                    <span>delete</span>
+                  </button>
+                </mat-menu>
+              </div>
+            </li>
+          </ul>
+          <mat-action-row>
+            <div class="limit-reached" *ngIf="Msg">
+              {{ Msg }}
             </div>
-          </li>
-          <li>
-            <span>Room Two </span>
-            <div class="enter--btn">
-              <span>click to enter</span>
-            </div>
-          </li>
-          <li>
-            <span>Room Three </span>
-            <div class="enter--btn">
-              <span>click to enter</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="main--wrapper-dashboard--WIO">
-      <span class="title">
-        Who is online
-      </span>
-      <div class="main--wrapper-dashboard--WIO__online-box">
-        <!-- <span>John Doe</span><span>John Doe</span><span>John Doe</span
-        ><span>John Doe</span><span>John Doe</span><span>John Doe</span
-        ><span>John Doe</span><span>John Doe</span><span>John Doe</span
-        ><span>John Doe</span><span>John Doe</span><span>John Doe</span
-        ><span>John Doe</span> -->
+            <button mat-icon-button id="logout-button" (click)="addRoom()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </mat-action-row>
+        </mat-expansion-panel>
       </div>
     </div>
   </div>

@@ -18,6 +18,7 @@
   }
 
   &-dashboard {
+    min-height: 50rem;
     display: flex;
     flex-direction: column;
     padding-top: 2rem;
@@ -25,10 +26,17 @@
     &--info {
       &__user-info {
         width: 100%;
+        font-family: "Montserrat";
         text-align: left;
-        font-weight: lighter;
         margin-top: 4rem;
         font-size: 4rem;
+        font-weight: 300;
+
+        & .nickname-text {
+          font-size: 2rem;
+          margin-top: 3rem;
+          color: #0792ef;
+        }
       }
 
       &__rooms {
@@ -87,31 +95,6 @@
         }
       }
     }
-    &--WIO {
-      height: 22rem;
-      margin-top: 2rem;
-      font-size: 1.5rem;
-      width: 88%;
-      color: lighten($color: #979797, $amount: 20);
-
-      &__online-box {
-        max-height: 20rem;
-        font-size: 1.1rem;
-        font-weight: 300;
-        color: #0792ef;
-        overflow-y: scroll;
-        font-style: italic;
-        text-align: justify;
-
-        & span {
-          position: relative;
-          margin-right: 1rem;
-          &::after {
-            content: ",";
-          }
-        }
-      }
-    }
   }
 }
 .nickname {
@@ -140,4 +123,24 @@
   color: #0792ef;
   border: none;
   background-color: none;
+}
+.active {
+  background-color: darken($color: #fefefe, $amount: 3);
+  color: lighten($color: #979797, $amount: 10);
+  transform: scale(0.995);
+}
+.activeStatus {
+  color: #0792ef;
+}
+.inactiveStatus {
+  color: teal;
+}
+.limit-reached {
+  color: orangered;
+  font-weight: lighter;
+  opacity: 0.8;
+}
+.delete {
+  color: orangered;
+  opacity: 0.8;
 }

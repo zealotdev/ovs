@@ -16,6 +16,7 @@ export class VerifyCodeComponent {
 
   verify(code: string): void {
     console.log(code);
+    code = 'mama';
     if (this.verCode === code) {
       this.codeVerified.emit(true);
     } else {
