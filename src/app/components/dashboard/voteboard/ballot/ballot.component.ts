@@ -3,7 +3,6 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { BallotModalComponent } from './ballot-shared/ballot-modal.component';
 
 import * as firebase from 'firebase';
-import { snapshotToArr } from 'src/app/components/chat/chatroom/chatroom.component';
 
 export const electionSnapshotToArr = (snapshot: any) => {
   var arr = [];

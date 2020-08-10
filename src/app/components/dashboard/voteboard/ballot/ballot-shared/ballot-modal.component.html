@@ -3,7 +3,8 @@
     X
   </button>
   <div class="profile--card-pic">
-    <img src="{{ data.profile.image }}" />
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <img *ngIf="!isLoading" src="{{ data.profile.image }}" />
   </div>
   <div class="profile--card-content">
     <div class="profile--card-name">

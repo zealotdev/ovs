@@ -12,6 +12,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class BallotModalComponent implements OnInit {
   tokenVerifyForm: FormGroup;
   error: string = '';
+  isLoading = true;
+
   constructor(
     private matDialogRef: MatDialogRef<BallotModalComponent>,
     @Inject(MAT_DIALOG_DATA)
@@ -23,6 +25,10 @@ export class BallotModalComponent implements OnInit {
     this.tokenVerifyForm = new FormGroup({
       token: new FormControl(null, Validators.required),
     });
+
+    setInterval(() => {
+      this.isLoading = false;
+    }, 1400);
   }
   closeDialog() {
     this.matDialogRef.close();
