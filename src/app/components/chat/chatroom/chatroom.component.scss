@@ -1,3 +1,5 @@
+@import "../../../../assets/scss/media";
+
 .chat--box {
   height: 60rem;
   position: relative;
@@ -7,6 +9,9 @@
   box-shadow: 0.5rem 0.7rem 1.1rem rgba($color: #979797, $alpha: 0.3),
     -0.5rem -0.7rem 1.1rem rgba($color: #979797, $alpha: 0.3);
 
+  @include md-down {
+    height: 40rem;
+  }
   &__header {
     display: flex;
     width: 100%;

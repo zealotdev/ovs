@@ -12,7 +12,7 @@
       <option
         class="dropdown-item"
         *ngFor="let election of elections"
-        [value]="election.id"
+        [value]="election.key"
         >{{ election.electionType | titlecase | slice: 0:9 }} Election</option
       >
     </select>
@@ -25,7 +25,7 @@
       <div class="cands--list">
         <span
           class="cands--list-item"
-          *ngFor="let cand of candidates; let i = index"
+          *ngFor="let cand of candidatesObj; let i = index"
           (click)="onSelect(cand)"
           [class.selected]="cand.name == candidateName"
         >
@@ -39,12 +39,17 @@
     </div>
     <div class="bottom">
       <div class="selected--cand" *ngIf="candidateName">
+        <span *ngIf="!selected">Please select a candidate.</span>
         <span class="quote">"</span> I vote for
         <span class="cand--name">{{ candidateName }}</span> as a
         <span>{{ electionType | titlecase }}</span
         ><span class="quote">"</span>
       </div>
-      <button class="btn vote__btn ripple" (click)="onVote()">
+      <button
+        class="btn vote__btn ripple"
+        (click)="onVote()"
+        [class.disabled]="disabled"
+      >
         Vote
       </button>
     </div>

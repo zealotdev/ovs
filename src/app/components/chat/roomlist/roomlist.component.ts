@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import * as firebase from 'firebase';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
@@ -33,7 +33,12 @@ export class RoomlistComponent implements OnInit {
   roomLimitReached: boolean = false;
   Msg: string;
   onlineUsers = [];
+  selectedIndex = 0;
+  chatOpened: boolean = true;
   @ViewChild(ChatroomComponent) chatRoomComp: ChatroomComponent;
+
+  innerWidth = 0;
+  onMobileScreen: boolean = false;
 
   constructor(
     private _router: Router,
@@ -43,6 +48,8 @@ export class RoomlistComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.onScreenResize(window.innerWidth);
+
     this.nickname = localStorage.getItem('nickname');
     firebase
       .database()
@@ -53,6 +60,8 @@ export class RoomlistComponent implements OnInit {
   }
 
   enterChatRoom(roomname: string) {
+    this.chatOpened = false;
+    this.selectedIndex = 1;
     this.roomLimitReached = false;
     this.choosedRoom = roomname;
     const chat = {
@@ -107,6 +116,8 @@ export class RoomlistComponent implements OnInit {
   }
 
   onExit(exit: boolean) {
+    this.chatOpened = true;
+    this.selectedIndex = 0;
     if (exit) {
       this.choosedRoom = '';
     }
@@ -149,5 +160,19 @@ export class RoomlistComponent implements OnInit {
   }
   openSnackBar(message: string) {
     this._snackBar.open(message, 'close', { duration: 5000 });
+  }
+  @HostListener('window: resize', ['$event'])
+  onScreenResize(event?, screenSize?) {
+    if (event) {
+      this.innerWidth = window.innerWidth;
+    } else if (screenSize) {
+      this.innerWidth = screenSize;
+    }
+    if (this.innerWidth <= 768) {
+      this.onMobileScreen = true;
+    } else {
+      this.onMobileScreen = false;
+    }
+    console.log(this.onMobileScreen);
   }
 }

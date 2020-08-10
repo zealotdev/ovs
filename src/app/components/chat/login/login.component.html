@@ -1,50 +1,4 @@
 <div class="login--card">
-  <div class="login--card__left" id="agreement">
-    <div class="login--card__agreement font__secondary">
-      <span class="login--card__agreement-title">User Agreement</span>
-      <ul class="login--card__agreement-terms">
-        <span class="login--card__agreement--sub-heading">
-          By entering and participating in OVS chat service, you agree to the
-          following terms and conditions of participation. These terms and
-          conditions are contractually binding upon you and you agree to each of
-          them.
-        </span>
-
-        <li class="login--card__agreement-term">
-          You enter and participate in the Chat Room/s and gain access to the
-          materials at your own risks.
-        </li>
-
-        <li class="login--card__agreement-term">
-          We do not monitor of screen any communications in the Chat Room/s and
-          we are not responsible for any material posted and we do not assume
-          the responsibility to do so.
-        </li>
-        <li class="login--card__agreement-term">
-          We do not promise any warranties as to the truth or accuracy of any
-          information obtained through Chat Room/s, You agree and acknowledge
-          that you assume the risk of any actions you take in reliance upon the
-          information that may be contained in the Chat Room/s.
-        </li>
-        <li class="login--card__agreement-term">
-          You are fully responsible for your own statements or materials that
-          you post in the Chat Room/s and any consequences.
-        </li>
-        <li class="login--card__agreement-term">
-          Any opinions or views expressed by the Chat Room participants are
-          their own.
-        </li>
-        <li class="login--card__agreement-term">
-          As a participant in the Chat Room, you agree that we may remove any
-          materials from the Chat Room/s for any reason, in our sole discretion,
-          or for no reason at all. This includes materials that are disruptive,
-          abusive, offensive, illegal, vulgar, pornographic, or any other
-          material.
-        </li>
-      </ul>
-    </div>
-  </div>
-
   <form
     [formGroup]="loginForm"
     (ngSubmit)="onSubmit()"
@@ -74,10 +28,17 @@
         >
       </div>
       <div class="login--card__form-input--link">
-        By login in you agree to the
-        <a href="http://localhost:4200/chat/login#agreement">User Agreement</a>
+        To login in you must agree to the
+        <a (click)="openUserAgreement()">User Agreement</a> Terms
       </div>
     </div>
-    <button type="submit" class="btn ripple">login</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="disabled"
+    >
+      login
+    </button>
   </form>
 </div>

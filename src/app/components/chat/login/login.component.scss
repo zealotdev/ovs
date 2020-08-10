@@ -5,7 +5,6 @@
   font-style: italic;
 }
 .login--card {
-  // padding: 2rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -13,66 +12,19 @@
   background-color: #fff;
   box-shadow: 0.2rem 0.2rem 0.95rem rgba($color: #000000, $alpha: 0.2),
     -0.2rem -0.2rem 0.95rem rgba($color: #000000, $alpha: 0.2);
-  width: 70%;
+  width: 40%;
   height: 48rem;
   border-radius: 0.8rem;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  @include md-down {
+    width: 88%;
+  }
+
   @include sm {
-    width: 98%;
+    width: 96%;
   }
 
-  &__left {
-    background-color: #1997f0;
-    width: 100%;
-    height: 48rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
-    border-top-left-radius: 0.8rem;
-    border-bottom-left-radius: 0.8rem;
-
-    &:target {
-      animation: glow 4s infinite ease-in-out;
-    }
-  }
-  &__agreement {
-    overflow-y: scroll;
-    font-size: 1.2rem;
-    height: 80%;
-    background-color: rgba($color: #000000, $alpha: 0.1);
-    letter-spacing: 0.05rem;
-
-    &-title {
-      font-size: 1.8rem;
-      font-weight: 500;
-      position: sticky;
-      top: -0.2rem;
-      left: 0;
-      background-color: darken($color: #1997f0, $amount: 15);
-      width: 100%;
-      padding: 0.6rem 0 0.6rem 3.8rem;
-      display: block;
-    }
-    &-terms {
-      margin-top: 1rem;
-      padding-right: 1rem;
-    }
-    &--sub-heading {
-      margin-bottom: 2rem;
-      display: block;
-      font-style: italic;
-    }
-    &-term {
-      list-style-type: decimal;
-
-      &:not(:last-child) {
-        margin-bottom: 1rem;
-      }
-    }
-  }
   &__form {
     width: 100%;
     height: 10rem;
@@ -100,6 +52,9 @@
         letter-spacing: 0.15rem;
         color: #656379;
 
+        @include md-down {
+          width: 80%;
+        }
         &:focus {
           outline: none;
         }
@@ -108,11 +63,22 @@
         }
       }
       &--link {
+        font-size: 1.3rem;
+        width: 100%;
+        margin: 1rem 0;
+
+        @include md-down {
+          width: 80%;
+        }
+        @include sm {
+          font-size: 1.2rem;
+        }
         & a {
           color: #1997f0;
           text-decoration: none;
           font-style: italic;
           font-weight: 500;
+          cursor: pointer;
         }
       }
     }

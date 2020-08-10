@@ -3,11 +3,13 @@
 .main--wrapper {
   display: grid;
   width: 100%;
+  height: auto;
   grid-template-columns: 2fr 3fr;
   grid-gap: 2rem;
   padding: 2rem 4rem;
   color: #979797;
   font-size: 1.4rem;
+  margin-bottom: 6rem;
   background-color: #f3f3f3;
   border-radius: 0.8rem;
   box-shadow: 0.5rem 0.7rem 1.1rem rgba($color: #979797, $alpha: 0.3),
@@ -17,12 +19,19 @@
     padding-top: 2rem;
   }
 
+  @include md-down {
+    padding: 2rem 1.8rem;
+  }
+
   &-dashboard {
     min-height: 50rem;
     display: flex;
     flex-direction: column;
     padding-top: 2rem;
 
+    @include md-down {
+      min-height: 60rem;
+    }
     &--info {
       &__user-info {
         width: 100%;
@@ -32,16 +41,28 @@
         font-size: 4rem;
         font-weight: 300;
 
+        @include md-down {
+          font-size: 3rem;
+        }
         & .nickname-text {
           font-size: 2rem;
           margin-top: 3rem;
           color: #0792ef;
+
+          @include md-down {
+            font-size: 1.6rem;
+          }
         }
       }
 
       &__rooms {
         margin-top: 3rem;
         width: 88%;
+
+        @include md-down {
+          margin: auto;
+          width: 100%;
+        }
         &-head {
           display: flex;
           align-items: center;
@@ -143,4 +164,10 @@
 .delete {
   color: orangered;
   opacity: 0.8;
+}
+
+.onMobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

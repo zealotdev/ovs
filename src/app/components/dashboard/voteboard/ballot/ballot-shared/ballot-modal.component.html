@@ -1,0 +1,59 @@
+<div class="profile--card" *ngIf="data.for === 'profile'">
+  <button class="profile--card-closeDialog ripple" (click)="closeDialog()">
+    X
+  </button>
+  <div class="profile--card-pic">
+    <img src="{{ data.profile.image }}" />
+  </div>
+  <div class="profile--card-content">
+    <div class="profile--card-name">
+      <span class="hint">Name: </span> {{ data.profile.name }}
+    </div>
+    <div class="profile--card-nickname">
+      <span class="hint">Nickname: </span> {{ data.profile.nickname }}
+    </div>
+    <div class="profile--card-from">
+      <span class="hint">Form: </span>
+      {{ data.profile.course | titlecase }} level
+      {{ data.profile.level }}
+    </div>
+    <div class="profile--card-bio">
+      <span class="hint">Bio: </span> {{ data.profile.bio }}
+    </div>
+  </div>
+</div>
+
+<!-- DIALOG FOR VOTE CASTING -->
+
+<div class="castboard" *ngIf="data.for === 'vote'">
+  <h2 mat-dialog-title>Verify My Token</h2>
+  <mat-dialog-content>
+    <div class="castboard--declaration" *ngIf="data">
+      <span class="quote">"</span> I consciously vote for
+      <span class="cand--name">{{ data.candidateObject.candidateName }}</span>
+      as a <span>{{ data.candidateObject.electionType | titlecase }}</span
+      ><span class="quote">"</span>
+    </div>
+    <div class="form">
+      <form [formGroup]="tokenVerifyForm" (ngSubmit)="onVoteCast()">
+        <mat-form-field>
+          <mat-label>Enter Vote Token</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="token"
+            autocomplete="off"
+          />
+          <mat-hint *ngIf="error && !tokenVerifyForm.pristine">
+            <mat-error>
+              {{ error }}
+            </mat-error>
+          </mat-hint>
+        </mat-form-field>
+        <div class="btn-field">
+          <button mat-raised-button color="primary">Cast Vote</button>
+        </div>
+      </form>
+    </div>
+  </mat-dialog-content>
+</div>

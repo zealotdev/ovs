@@ -15,6 +15,10 @@ export class ChartsConfig {
             display: true,
             labelString: 'Votes',
           },
+          ticks: {
+            min: 0,
+            stepSize: 1,
+          },
         },
       ],
     },

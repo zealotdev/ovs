@@ -1,9 +1,13 @@
+@import "assets/scss/lighttheme";
 @import "assets/scss/media";
 @import "assets/scss/elegant-font";
 @import "assets/scss/base";
 @import "assets/scss/animation";
 @import "assets/scss/utils";
 
+html {
+  transition: color 0.3s, background-color 3s;
+}
 html,
 body {
   height: 100%;
@@ -16,3 +20,20 @@ body {
 .no-padding-dialog .mat-dialog-container {
   padding: 0;
 }
+
+// Styling for user-agreement modal
+.customStyle .mat-dialog-container {
+  width: 100%;
+  margin: auto;
+
+  @include md-up{
+    width: 50%;
+  }
+}
+
+// html[theme="dark-mode"] {
+//   filter: invert(1) hue-rotate(180deg);
+// }
+// html[theme="dark-mode"] img {
+//   filter: invert(1) hue-rotate(180deg);
+// }

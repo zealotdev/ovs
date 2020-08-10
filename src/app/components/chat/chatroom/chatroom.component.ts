@@ -11,7 +11,6 @@ import { DatePipe } from '@angular/common';
 import * as firebase from 'firebase';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
-import { Observable, of } from 'rxjs';
 
 export const snapshotToArr = (snapshot: any) => {
   const returnArr = [];

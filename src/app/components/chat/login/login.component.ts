@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import * as firebase from 'firebase';
+import { MatDialog } from '@angular/material/dialog';
+import { UserAgreementComponent } from './user-agreement/user-agreement.component';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   forbiddenNicknames = ['anon', 'damn'];
   ref = firebase.database().ref('chatData/users/');
-  constructor(private router: Router) {}
+  disabled: boolean = true;
+  constructor(private router: Router, private _matDialog: MatDialog) {}
 
   ngOnInit(): void {
     if (localStorage.getItem('nickname')) {
@@ -27,6 +30,11 @@ export class LoginComponent implements OnInit {
         Validators.minLength(4),
       ]),
     });
+  }
+
+  openUserAgreement() {
+    const dialogRef = this._matDialog.open(UserAgreementComponent);
+    dialogRef.afterClosed().subscribe((result) => (this.disabled = !result));
   }
 
   onSubmit() {

@@ -1,6 +1,6 @@
 {
-  "name": "ovs-front",
-  "short_name": "ovs-front",
+  "name": "ovs",
+  "short_name": "ovs",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

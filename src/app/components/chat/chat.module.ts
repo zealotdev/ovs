@@ -12,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatChipsModule } from '@angular/material/chips';
+import { MatTabsModule } from '@angular/material/tabs';
 import { NgxEmojiPickerModule } from 'ngx-emoji-picker';
 
 import { ChatComponent } from './chat.component';
@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { RoomlistComponent } from './roomlist/roomlist.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { ChatRoutingModule } from './chat-routing.module';
+import { UserAgreementComponent } from './login/user-agreement/user-agreement.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ChatRoutingModule } from './chat-routing.module';
     RoomlistComponent,
     ChatroomComponent,
     AddRoomComponent,
+    UserAgreementComponent,
   ],
   imports: [
     ChatRoutingModule,
@@ -45,7 +47,7 @@ import { ChatRoutingModule } from './chat-routing.module';
     NgxEmojiPickerModule,
     MatSnackBarModule,
     MatMenuModule,
-    MatChipsModule,
+    MatTabsModule,
   ],
   exports: [ChatComponent, ReactiveFormsModule, FormsModule],
   providers: [DatePipe],

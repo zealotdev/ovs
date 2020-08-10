@@ -9,7 +9,7 @@
     <option
       class="dropdown-item"
       *ngFor="let election of elections"
-      [value]="election.id"
+      [value]="election.key"
       >{{ election.electionType | titlecase | slice: 0:9 }} Election.</option
     >
   </select>

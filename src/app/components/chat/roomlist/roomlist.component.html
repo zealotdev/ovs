@@ -1,4 +1,4 @@
-<div class="main--wrapper">
+<div class="main--wrapper" [class.onMobile]="onMobileScreen">
   <div class="main--wrapper-dashboard">
     <div class="main--wrapper-dashboard--info">
       <button class="ripple btn-round" (click)="logOut()">
@@ -11,8 +11,12 @@
           <span class="nickname-text">{{ nickname }} </span></span
         >
       </div>
-      <div class="main--wrapper-dashboard--info__rooms">
-        <mat-expansion-panel>
+      <div
+        class="main--wrapper-dashboard--info__rooms"
+        *ngIf="!onMobileScreen"
+        [class.disabled]="choosedRoom"
+      >
+        <mat-expansion-panel expanded>
           <mat-expansion-panel-header>
             <mat-panel-title>
               <span class="title">Room List</span>
@@ -40,7 +44,6 @@
                   *ngIf="room.createdBy === nickname"
                   mat-icon-button
                   [matMenuTriggerFor]="menu"
-                  aria-label="Example icon-button with a menu"
                 >
                   <mat-icon>more_vert</mat-icon>
                 </button>
@@ -67,10 +70,80 @@
           </mat-action-row>
         </mat-expansion-panel>
       </div>
+      <mat-tab-group
+        mat-align-tabs="start"
+        *ngIf="onMobileScreen"
+        [selectedIndex]="selectedIndex"
+      >
+        <mat-tab label="Room List" [disabled]="!chatOpened">
+          <mat-expansion-panel expanded>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <span class="title">Room List</span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul class="main--wrapper-dashboard--info__rooms-list">
+              <li
+                *ngFor="let room of rooms"
+                (click)="enterChatRoom(room.name)"
+                [class.active]="room.name === choosedRoom"
+              >
+                <span
+                  >{{ room.name }}
+                  <i class="icon_ribbon" *ngIf="room.name === choosedRoom"></i>
+                </span>
+
+                <div class="enter--btn">
+                  <span *ngIf="room.name === choosedRoom" class="activeStatus"
+                    >active</span
+                  >
+                  <span *ngIf="room.name !== choosedRoom" class="inactiveStatus"
+                    >inactive</span
+                  >
+                  <button
+                    *ngIf="room.createdBy === nickname"
+                    mat-icon-button
+                    [matMenuTriggerFor]="menu"
+                    aria-label="Example icon-button with a menu"
+                  >
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button
+                      mat-menu-item
+                      (click)="onDelete(room.name)"
+                      class="delete"
+                    >
+                      <mat-icon>clear</mat-icon>
+                      <span>delete</span>
+                    </button>
+                  </mat-menu>
+                </div>
+              </li>
+            </ul>
+            <mat-action-row>
+              <div class="limit-reached" *ngIf="Msg">
+                {{ Msg }}
+              </div>
+              <button mat-icon-button id="logout-button" (click)="addRoom()">
+                <mat-icon>add</mat-icon>
+              </button>
+            </mat-action-row>
+          </mat-expansion-panel>
+        </mat-tab>
+        <mat-tab label="Room Name" [disabled]="chatOpened">
+          <app-chatroom
+            *ngIf="choosedRoom && onMobileScreen"
+            [roomname]="choosedRoom"
+            (exitRoom)="onExit($event)"
+          ></app-chatroom>
+        </mat-tab>
+      </mat-tab-group>
     </div>
   </div>
+
   <app-chatroom
-    *ngIf="choosedRoom"
+    *ngIf="choosedRoom && !onMobileScreen"
     [roomname]="choosedRoom"
     (exitRoom)="onExit($event)"
   ></app-chatroom>

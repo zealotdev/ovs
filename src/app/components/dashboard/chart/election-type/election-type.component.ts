@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { electionDataService } from 'src/app/services/election.service';
+import * as firebase from 'firebase';
+import { snapshotToArr } from 'src/app/components/chat/chatroom/chatroom.component';
 
 @Component({
   selector: 'app-election-type',
@@ -7,17 +9,24 @@ import { electionDataService } from 'src/app/services/election.service';
   styleUrls: ['./election-type.component.scss'],
 })
 export class ElectionTypeComponent implements OnInit {
-  public elections;
+  public elections = [];
   @Output() selectedElection = new EventEmitter<number>();
   constructor(private _electionDataService: electionDataService) {}
 
   ngOnInit(): void {
-    this._electionDataService
-      .getElectionData()
-      .subscribe((data) => (this.elections = data));
+    firebase
+      .database()
+      .ref('electionList')
+      .on('value', (snapshot) => {
+        this.elections = [];
+        let electionData = snapshotToArr(snapshot);
+        electionData.forEach((el) => {
+          this.elections.push(el);
+        });
+      });
   }
 
-  selectedEl(id: number): void {
-    this.selectedElection.emit(id);
+  selectedEl(key: number): void {
+    this.selectedElection.emit(key);
   }
 }

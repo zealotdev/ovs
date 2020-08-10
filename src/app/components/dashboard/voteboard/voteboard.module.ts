@@ -3,19 +3,19 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { VoteboardComponent } from './voteboard.component';
-import { VerifyCodeComponent } from './verify/verify-code.component';
-import { BallotComponent } from './ballot/ballot.component';
-import { FormsModule } from '@angular/forms';
-import { ProfileComponent } from './ballot/profile/profile.component';
+import { VerifyTokenComponent } from './verify-vote-token/verify-vote-token.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BallotModules } from './ballot/ballot.modules';
 
 @NgModule({
-  declarations: [
-    VoteboardComponent,
-    VerifyCodeComponent,
-    ProfileComponent,
-    BallotComponent,
+  declarations: [VoteboardComponent, VerifyTokenComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    CommonModule,
+    BallotModules,
+    ReactiveFormsModule,
   ],
-  imports: [BrowserModule, FormsModule, CommonModule],
   exports: [VoteboardComponent],
 })
 export class VoteboardModule {}

@@ -1,0 +1,28 @@
+@import "../../../../../assets/scss/media";
+
+.agreement {
+  font-size: 1.4rem;
+  letter-spacing: 0.05rem;
+  color: #747286 !important;
+
+  @include md-down {
+    font-size: 1.2rem;
+  }
+
+  &-terms {
+    margin-top: 1rem;
+    padding-right: 1rem;
+  }
+  &--sub-heading {
+    margin-bottom: 2rem;
+    display: block;
+    font-style: italic;
+  }
+  &-term {
+    list-style-type: decimal;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

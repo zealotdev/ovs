@@ -11,10 +11,10 @@
       </div>
     </div>
 
-    <app-verify-code
+    <app-verify-token
       (codeVerified)="onVerified($event)"
       *ngIf="!verified"
-    ></app-verify-code>
+    ></app-verify-token>
   </div>
   <app-ballot *ngIf="verified"></app-ballot>
 </div>
