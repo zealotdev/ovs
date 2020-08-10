@@ -27,3 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 Comment up on this repo, or just email me: g33ky.me@pm.me / geekjorge@gmail.com. I'll be happy to help.
+
+---
+## Netlify build status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/692fd2d2-6bc9-4568-9e2e-fee362a401a0/deploy-status)](https://app.netlify.com/sites/ovsystem/deploys)
