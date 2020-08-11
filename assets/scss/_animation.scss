@@ -1,0 +1,50 @@
+@keyframes pulse {
+  0% {
+    color: #0792ef;
+    opacity: 0.55;
+  }
+  50% {
+    color: darken(#0792ef, 30);
+    opacity: 0.15;
+  }
+  100% {
+    color: #0792ef;
+    opacity: 0.55;
+  }
+}
+
+@keyframes tick {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0.1rem rgba($color: #1997f0, $alpha: 0.9);
+  }
+  25% {
+    box-shadow: 0 0 0.4rem rgba($color: #1997f0, $alpha: 0.9);
+  }
+  50% {
+    box-shadow: 0 0 4rem rgba($color: #1997f0, $alpha: 0.9);
+  }
+  75% {
+    box-shadow: 0 0 0.4rem rgba($color: #1997f0, $alpha: 0.9);
+  }
+  100% {
+    box-shadow: 0 0 0.1rem rgba($color: #1997f0, $alpha: 0.9);
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "configVersion": 1,
+  "timestamp": 1597140354555,
+  "index": "/ovs/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/ovs/index.html",
+        "/ovs/main-es2015.c31125c96fe4c9401cc0.js",
+        "/ovs/main-es5.c31125c96fe4c9401cc0.js",
+        "/ovs/manifest.webmanifest",
+        "/ovs/polyfills-es2015.f332a089ad1600448873.js",
+        "/ovs/polyfills-es5.177e85a9724683782539.js",
+        "/ovs/runtime-es2015.0dae8cbc97194c7caed4.js",
+        "/ovs/runtime-es5.0dae8cbc97194c7caed4.js",
+        "/ovs/styles.b8302458e51bb2bf310c.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/ovs/ElegantIcons.4555dd9ce623f8fd6d72.ttf",
+        "/ovs/ElegantIcons.78ba4ad1289e5a66ca11.eot",
+        "/ovs/ElegantIcons.941bf29b415d3a9b7099.woff",
+        "/ovs/ElegantIcons.a3709f859357b50798d9.svg",
+        "/ovs/assets/fonts/ElegantIcons.eot",
+        "/ovs/assets/fonts/ElegantIcons.svg",
+        "/ovs/assets/fonts/ElegantIcons.ttf",
+        "/ovs/assets/fonts/ElegantIcons.woff",
+        "/ovs/assets/icons/icon-128x128.png",
+        "/ovs/assets/icons/icon-144x144.png",
+        "/ovs/assets/icons/icon-152x152.png",
+        "/ovs/assets/icons/icon-192x192.png",
+        "/ovs/assets/icons/icon-384x384.png",
+        "/ovs/assets/icons/icon-512x512.png",
+        "/ovs/assets/icons/icon-72x72.png",
+        "/ovs/assets/icons/icon-96x96.png",
+        "/ovs/assets/img/logo.png",
+        "/ovs/assets/img/logo@2x.png",
+        "/ovs/assets/img/paper-plane.svg",
+        "/ovs/assets/scss/_animation.scss",
+        "/ovs/assets/scss/_base.scss",
+        "/ovs/assets/scss/_darktheme.scss",
+        "/ovs/assets/scss/_elegant-font.scss",
+        "/ovs/assets/scss/_lighttheme.scss",
+        "/ovs/assets/scss/_media.scss",
+        "/ovs/assets/scss/_utils.scss",
+        "/ovs/favicon.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/ovs/ElegantIcons.4555dd9ce623f8fd6d72.ttf": "eb8769a9501019da4bbf042a765ad417783b4922",
+    "/ovs/ElegantIcons.78ba4ad1289e5a66ca11.eot": "39d5131a9ffe1fcfad281653c1495a22af3c6e4a",
+    "/ovs/ElegantIcons.941bf29b415d3a9b7099.woff": "f9be87fa2d1d4a95e8305afb51778db4bc759fbc",
+    "/ovs/ElegantIcons.a3709f859357b50798d9.svg": "f4d24f0bf630695f9e6c564500dda4bc45535050",
+    "/ovs/assets/fonts/ElegantIcons.eot": "39d5131a9ffe1fcfad281653c1495a22af3c6e4a",
+    "/ovs/assets/fonts/ElegantIcons.svg": "f4d24f0bf630695f9e6c564500dda4bc45535050",
+    "/ovs/assets/fonts/ElegantIcons.ttf": "eb8769a9501019da4bbf042a765ad417783b4922",
+    "/ovs/assets/fonts/ElegantIcons.woff": "f9be87fa2d1d4a95e8305afb51778db4bc759fbc",
+    "/ovs/assets/icons/icon-128x128.png": "1b8b6c01cbedc5c79c2a918867f304726d1204ea",
+    "/ovs/assets/icons/icon-144x144.png": "43b1fad42c96f4bf096e879dd5b053a351ab26f8",
+    "/ovs/assets/icons/icon-152x152.png": "ac50320dbf87003a0a7883fb6163b117ae8ae8c7",
+    "/ovs/assets/icons/icon-192x192.png": "879dff50d3b92aafa01126360104735b867e3716",
+    "/ovs/assets/icons/icon-384x384.png": "b0a2cf23383f408dfb9eaffd19201c4c2197c3a3",
+    "/ovs/assets/icons/icon-512x512.png": "f9da36496d6847c9ccd66d45c448017f31e5af83",
+    "/ovs/assets/icons/icon-72x72.png": "02964f2ce403acb58558b4bc5ebd4b67c6b3db2e",
+    "/ovs/assets/icons/icon-96x96.png": "1073048e0974821dd84afbda16d4ea5720b76333",
+    "/ovs/assets/img/logo.png": "6742296a9f2336e1990f20e0e499f7aab81bec89",
+    "/ovs/assets/img/logo@2x.png": "d8b6a0658fac0839ce1cfa7ac8fd0946bf43ccde",
+    "/ovs/assets/img/paper-plane.svg": "b4612c163bcd623255a07d4d7211f2cff2ad5626",
+    "/ovs/assets/scss/_animation.scss": "37fdb7223e7101db24602d954456cacfc64c591d",
+    "/ovs/assets/scss/_base.scss": "499d4ca598ccc664c8732258fb15da5d3131ea1e",
+    "/ovs/assets/scss/_darktheme.scss": "fe19ff6693bf9c6795268f3be85a48398f6bbc06",
+    "/ovs/assets/scss/_elegant-font.scss": "db030c5ab2765fe3584755eba86d06a76e12afac",
+    "/ovs/assets/scss/_lighttheme.scss": "6194c2aec521ffb6f31a754bc160a265ff2db8e6",
+    "/ovs/assets/scss/_media.scss": "97aec7aafdd268d13df1f19cab20b5241e93f1d6",
+    "/ovs/assets/scss/_utils.scss": "f45d3d39d8429c39c5e5b251665cb71b5b8fcc54",
+    "/ovs/favicon.png": "297fa8e9a71bb3131d742294d2b1d34f53ef0576",
+    "/ovs/index.html": "e3f110f71b36b5f2664d77c25b93738b1f4ade39",
+    "/ovs/main-es2015.c31125c96fe4c9401cc0.js": "216f7fadd9449c422d267056f019b4d9c9c9304c",
+    "/ovs/main-es5.c31125c96fe4c9401cc0.js": "b0d5dab42913453180b6b69365d64f7cc8c77321",
+    "/ovs/manifest.webmanifest": "50969eb66200ed215bae8a1bc9e64f23b22daaa9",
+    "/ovs/polyfills-es2015.f332a089ad1600448873.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
+    "/ovs/polyfills-es5.177e85a9724683782539.js": "8aa26ea87b9958c6bd13b7c257c0e9940438e684",
+    "/ovs/runtime-es2015.0dae8cbc97194c7caed4.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/ovs/runtime-es5.0dae8cbc97194c7caed4.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/ovs/styles.b8302458e51bb2bf310c.css": "216e3b5ee83944de413356a291b4497db91afece"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
