@@ -4,7 +4,11 @@
   </button>
   <div class="profile--card-pic">
     <mat-spinner *ngIf="isLoading"></mat-spinner>
-    <img *ngIf="!isLoading" src="{{ data.profile.image }}" />
+    <img
+      *ngIf="!isLoading"
+      src="{{ data.profile.image }}"
+      alt="{{ data.profile.name }}"
+    />
   </div>
   <div class="profile--card-content">
     <div class="profile--card-name">
