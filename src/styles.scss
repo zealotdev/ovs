@@ -31,6 +31,46 @@ body {
   }
 }
 
+.github-link {
+  position: fixed;
+  top: 50%;
+  left: -3.8rem;
+  transform: translate(-50%, -50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color: #EEBE4A;
+  padding: .4rem .4rem .4rem 1rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  transition: all .3s ease;
+
+  &:hover{
+    left: 6rem;
+  }
+
+  & img{
+    height: 2.4rem;
+    width: 2.4rem;
+    border-radius: 50%;
+    padding: .4rem;
+    margin-left: .6rem;
+    background-color: #fff;
+  }
+  & a{
+    text-decoration: none;
+    color: #fff;
+    margin-left: 1rem;
+    cursor:pointer;
+    font-size:1.2rem;
+    font-weight: bold;
+
+    &:hover{
+      color: darken(#fff, 5);
+    }
+  }
+}
+
 // html[theme="dark-mode"] {
 //   filter: invert(1) hue-rotate(180deg);
 // }
