@@ -1,0 +1,20 @@
+<form class="form" [formGroup]="issueReportForm" (ngSubmit)="onSubmit()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Phone Number or Email</mat-label>
+    <input
+      formControlName="address"
+      matInput
+      placeholder="Ex. georgeisack9@gmail.com"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Report an issue</mat-label>
+    <textarea
+      formControlName="report"
+      matInput
+      placeholder="Ex. There is a bug..."
+    ></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary">report</button>
+</form>
