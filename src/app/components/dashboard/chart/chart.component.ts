@@ -98,10 +98,10 @@ export class ChartComponent implements OnInit, OnDestroy, AfterViewInit {
       chart.data = data;
 
       // Chart title
-      let title = chart.titles.create();
-      title.text = this.electionTitle.toUpperCase() + ' ELECTION';
-      title.fontSize = 16;
-      title.marginBottom = 10;
+      // let title = chart.titles.create();
+      // title.text = this.electionTitle.toUpperCase() + ' ELECTION';
+      // title.fontSize = 16;
+      // title.marginBottom = 10;
 
       // Hide logo
       chart.logo.disabled = true;
@@ -110,8 +110,11 @@ export class ChartComponent implements OnInit, OnDestroy, AfterViewInit {
       CandidatesAxis.renderer.grid.template.location = 0;
       CandidatesAxis.dataFields.category = 'candidate';
       CandidatesAxis.renderer.minGridDistance = 1;
-      CandidatesAxis.renderer.labels.template.width = 120;
-      CandidatesAxis.renderer.labels.template.wrap = true;
+      CandidatesAxis.renderer.labels.template.maxWidth = 85;
+      CandidatesAxis.renderer.labels.template.rotation = -45;
+      CandidatesAxis.renderer.labels.template.horizontalCenter = 'right';
+      CandidatesAxis.renderer.labels.template.verticalCenter = 'middle';
+      CandidatesAxis.renderer.labels.template.truncate = true;
       CandidatesAxis.fontSize = 12;
 
       let votesAxis = chart.yAxes.push(new am4charts.ValueAxis());

@@ -3,22 +3,9 @@
     class="select--el"
     (selectedElection)="onSelected($event)"
   ></app-election-type>
-  <!-- <div class="chart--canvas">
-    <span class="title"
-      >{{ electionTitle | titlecase | slice: 0:9 }} Election <br />
-      Standings</span
-    >
-    <canvas
-      *ngIf="dataIsAvailable"
-      baseChart
-      [datasets]="barChartData"
-      [labels]="barChartLabels"
-      [options]="barChartOptions"
-      [legend]="barChartLegend"
-      [colors]="colors"
-      [chartType]="barChartType"
-    >
-    </canvas>
-  </div> -->
+  <span class="title"
+    >{{ electionTitle | titlecase | slice: 0:9 }} Election <br />
+    Standings</span
+  >
   <div id="chartdiv" class="chart--canvas"></div>
 </div>
