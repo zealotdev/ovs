@@ -14,9 +14,15 @@ import { ChatModule } from './components/chat/chat.module';
 import { DashboardModule } from './components/dashboard/dashboard.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { NoteModalComponent } from './components/shared/note-modal/note-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, MobileNavComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    MobileNavComponent,
+    NoteModalComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -28,7 +34,9 @@ import { environment } from '../environments/environment';
     MatDialogModule,
     MatInputModule,
     MatButtonModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
