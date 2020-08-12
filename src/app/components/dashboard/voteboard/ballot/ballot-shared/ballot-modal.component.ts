@@ -53,6 +53,10 @@ export class BallotModalComponent implements OnInit {
               .child('votes')
               .set(firebase.database.ServerValue.increment(1));
 
+            // Update total votes
+            dbRef
+              .child('totalVotes')
+              .set(firebase.database.ServerValue.increment(1));
             // Remove token from pool
             dbRef
               .child('tokens')

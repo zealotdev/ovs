@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@amcharts/amcharts4": "^4.9.34",
     "@angular/animations": "~9.1.11",
     "@angular/cdk": "^9.2.4",
     "@angular/common": "~9.1.11",
@@ -23,9 +24,7 @@
     "@angular/platform-browser-dynamic": "~9.1.11",
     "@angular/router": "~9.1.11",
     "@angular/service-worker": "~9.1.11",
-    "chart.js": "^2.9.3",
     "firebase": "^7.16.1",
-    "ng2-charts": "^2.3.2",
     "ngx-emoji-picker": "^0.1.4",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
