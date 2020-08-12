@@ -45,10 +45,9 @@
       & input {
         border: 0;
         width: 100%;
-        border-bottom: 2px solid #1997f0;
         margin-bottom: 0.4rem;
         text-align: center;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         letter-spacing: 0.15rem;
         color: #656379;
 
@@ -60,6 +59,7 @@
         }
         &::placeholder {
           color: #656379;
+          font-size: 1.4rem;
         }
       }
       &--link {
