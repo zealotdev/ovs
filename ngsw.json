@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1597577431560,
+  "timestamp": 1597580150465,
   "index": "/ovs/index.html",
   "assetGroups": [
     {
@@ -40,6 +40,7 @@
         "/ovs/assets/fonts/ElegantIcons.svg",
         "/ovs/assets/fonts/ElegantIcons.ttf",
         "/ovs/assets/fonts/ElegantIcons.woff",
+        "/ovs/assets/icons/apple-touch-icon.png",
         "/ovs/assets/icons/github.svg",
         "/ovs/assets/icons/icon-128x128.png",
         "/ovs/assets/icons/icon-144x144.png",
@@ -73,6 +74,7 @@
     "/ovs/assets/fonts/ElegantIcons.svg": "f4d24f0bf630695f9e6c564500dda4bc45535050",
     "/ovs/assets/fonts/ElegantIcons.ttf": "eb8769a9501019da4bbf042a765ad417783b4922",
     "/ovs/assets/fonts/ElegantIcons.woff": "f9be87fa2d1d4a95e8305afb51778db4bc759fbc",
+    "/ovs/assets/icons/apple-touch-icon.png": "9024b7c6c627c586ef832a35472a130a298990b4",
     "/ovs/assets/icons/github.svg": "1b2b3f1db6c77dd45fdb54d83b63e0cfa345789f",
     "/ovs/assets/icons/icon-128x128.png": "1b8b6c01cbedc5c79c2a918867f304726d1204ea",
     "/ovs/assets/icons/icon-144x144.png": "43b1fad42c96f4bf096e879dd5b053a351ab26f8",
@@ -95,7 +97,7 @@
     "/ovs/canvg-es2015.c82d53a94f3fd12df4ce.js": "286565db57a3dce9a4174e4fd0182636cc48a8bc",
     "/ovs/canvg-es5.c82d53a94f3fd12df4ce.js": "7736efecb2c2e0a8f597581ebfb8f598fbf32127",
     "/ovs/favicon.png": "297fa8e9a71bb3131d742294d2b1d34f53ef0576",
-    "/ovs/index.html": "cfb92692043f67c8233021eb48eda4b6d4207b9d",
+    "/ovs/index.html": "01b020df63069283b8774784212915a9d9b4f573",
     "/ovs/main-es2015.282f59acc4fee13fcc80.js": "c1802562d33aeacb64cd66b882c5faf43795cb4e",
     "/ovs/main-es5.282f59acc4fee13fcc80.js": "90960ae710ee05d7cd6925494b38a6b69e01abc0",
     "/ovs/manifest.webmanifest": "367af902979e5f92e0f576fa09f89857a3097cc7",
