@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1597576912491,
+  "timestamp": 1597577431560,
   "index": "/ovs/index.html",
   "assetGroups": [
     {
@@ -10,6 +10,7 @@
       "urls": [
         "/ovs/canvg-es2015.c82d53a94f3fd12df4ce.js",
         "/ovs/canvg-es5.c82d53a94f3fd12df4ce.js",
+        "/ovs/favicon.png",
         "/ovs/index.html",
         "/ovs/main-es2015.282f59acc4fee13fcc80.js",
         "/ovs/main-es5.282f59acc4fee13fcc80.js",
@@ -57,8 +58,7 @@
         "/ovs/assets/scss/_elegant-font.scss",
         "/ovs/assets/scss/_lighttheme.scss",
         "/ovs/assets/scss/_media.scss",
-        "/ovs/assets/scss/_utils.scss",
-        "/ovs/favicon.png"
+        "/ovs/assets/scss/_utils.scss"
       ],
       "patterns": []
     }
