@@ -36,6 +36,7 @@ import { NoteModalComponent } from './components/shared/note-modal/note-modal.co
     MatButtonModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
+      registrationStrategy: 'registerImmediately',
     }),
   ],
   providers: [],
