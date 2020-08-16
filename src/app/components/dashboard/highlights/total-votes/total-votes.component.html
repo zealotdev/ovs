@@ -2,18 +2,8 @@
   <div class="card--body">
     <div class="card--body__title">
       Highlights of:
-      <select
-        class="dropdown"
-        name="type"
-        #selection
-        (input)="onSelect(selection.value)"
-      >
-        <option
-          class="dropdown-item"
-          *ngFor="let election of elections"
-          [value]="election.id"
-          >{{ election.electionType | titlecase | slice: 0:9 }} Election</option
-        >
+      <select class="dropdown" name="type" #selection>
+        <option class="dropdown-item" [value]="1">Choose Election</option>
       </select>
     </div>
     <div class="card--body__desc">
@@ -29,7 +19,7 @@
           <span class="leading">Total Votes: </span>
           <div>
             <span class="icon_like icon icon__mod-1"> </span>
-            <span>{{ sum }}</span>
+            <span>1203</span>
           </div>
         </div>
       </div>

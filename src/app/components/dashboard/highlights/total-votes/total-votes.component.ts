@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { electionDataService } from 'src/app/services/election.service';
 
 @Component({
   selector: 'app-total-votes',
@@ -11,33 +10,8 @@ export class TotalVotesComponent implements OnInit {
   selectedEl;
   sum: number = 0;
 
-  constructor(private _electionDataService: electionDataService) {}
-  ngOnInit() {
-    this._electionDataService
-      .getElectionData()
-      .subscribe((data) => (this.elections = data));
+  constructor() {}
+  ngOnInit() {}
 
-    this.onSelect(0);
-  }
-
-  onSelect(id: number) {
-    if (id != 0) {
-      this._electionDataService.getElectionData().subscribe((data) => {
-        this.selectedEl = data.find((el) => el.id == id);
-      });
-    } else {
-      this._electionDataService
-        .getElectionData()
-        .subscribe((data) => (this.selectedEl = data[0]));
-    }
-
-    this.findSum();
-  }
-
-  findSum() {
-    this.sum = 0;
-    this.selectedEl.candidates.forEach((candidate) => {
-      this.sum += candidate.votes;
-    });
-  }
+  onSelect(id: number) {}
 }
