@@ -39,17 +39,18 @@ export class VerifyTokenComponent implements OnInit {
         try {
           const snapShot = await firebase
             .database()
-            .ref(`tokens/${token}`)
+            .ref('tokens')
             .once('value');
 
-          if (snapShot.exists()) {
+          if (snapShot.child(`${token}`).exists()) {
             this.codeVerified.emit(true);
           } else {
             this.codeVerified.emit(false);
             this.error = true;
           }
         } catch (err) {
-          console.log('Error');
+          this.error = true;
+          console.log(err);
         }
       })();
     } else {
