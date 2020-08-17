@@ -12,8 +12,8 @@
           *ngFor="let election of elections"
           class="dropdown-item"
           [value]="election.key"
-          >{{ election.electionType | titlecase | slice: 0:9 }} Election</option
-        >
+          >{{ election.electionType | uppercase | slice: 0:15 }}
+        </option>
       </select>
     </div>
     <div class="card--body__desc">
