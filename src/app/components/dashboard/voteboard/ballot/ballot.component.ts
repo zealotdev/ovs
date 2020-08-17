@@ -4,16 +4,7 @@ import { BallotModalComponent } from './ballot-shared/ballot-modal.component';
 
 import * as firebase from 'firebase';
 
-export const electionSnapshotToArr = (snapshot: any) => {
-  var arr = [];
-  snapshot.forEach((snap) => {
-    var item = snap.val();
-    arr.push(item);
-  });
-  return arr;
-};
-
-export const snapToCandArrOne = (snapshot: any) => {
+export const snapToCandArr = (snapshot: any) => {
   var arr = [];
   snapshot.forEach((snap) => {
     let candObj = snap.val();
@@ -23,23 +14,14 @@ export const snapToCandArrOne = (snapshot: any) => {
   });
   return arr;
 };
-export const snapToCandArrTwo = (element: any) => {
-  var arr = [];
-  for (let i = 0; i < element.length; i++) {
-    let candObj = element;
-    candObj.key = i;
 
-    arr.push(candObj);
-  }
-  return arr;
-};
 @Component({
   selector: 'app-ballot',
   templateUrl: './ballot.component.html',
   styleUrls: ['./ballot.component.scss'],
 })
 export class BallotComponent implements OnInit {
-  elections = [{}];
+  elections = [];
   electionType: string;
   candidatesObj;
   candidateName: string;
@@ -53,29 +35,35 @@ export class BallotComponent implements OnInit {
   constructor(private matDialog: MatDialog) {}
 
   ngOnInit() {
-    this.dbRef.ref('electionList/').once('value', (snapshot) => {
-      this.elections = snapshot.val();
-      this.elections = snapToCandArrOne(snapshot);
+    this.dbRef.ref('electionList/').on('value', (snapshot) => {
+      let electionSnapArr = snapToCandArr(snapshot);
+      this.elections = [];
+      electionSnapArr.forEach((election) => {
+        if (election.active) {
+          this.elections.push(election);
+        }
+      });
+      this.onSelection(this.elections[0].key);
     });
 
     this.electionKey = undefined;
-    this.onSelection(0);
   }
-  onSelection(id: string | number) {
+  onSelection(key: string | number) {
     this.selected = false;
     this.disabled = true;
-    this.electionKey = id;
+    this.electionKey = key;
 
     this.candidateName = '';
-    if (id != 0) {
-      this.dbRef.ref(`electionList/${id}`).once('value', (snapshot) => {
-        this.candidatesObj = snapToCandArrOne(snapshot.child('candidates'));
+    if (key != 0) {
+      this.dbRef.ref(`electionList/${key}`).once('value', (snapshot) => {
+        this.candidatesObj = snapToCandArr(snapshot.child('candidates'));
         this.electionID = snapshot.val().id;
         this.electionType = snapshot.val().electionType;
       });
     } else {
+      // Fallback
       this.dbRef.ref('electionList/0').once('value', (snapshot) => {
-        this.candidatesObj = snapToCandArrOne(snapshot.child('candidates'));
+        this.candidatesObj = snapToCandArr(snapshot.child('candidates'));
         this.electionID = snapshot.val().id;
         this.electionType = snapshot.val().electionType;
       });

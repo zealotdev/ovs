@@ -27,7 +27,7 @@
 
   &__form {
     width: 100%;
-    height: 10rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +46,6 @@
         border: 0;
         width: 100%;
         margin-bottom: 0.4rem;
-        text-align: center;
         font-size: 1.6rem;
         letter-spacing: 0.15rem;
         color: #656379;
