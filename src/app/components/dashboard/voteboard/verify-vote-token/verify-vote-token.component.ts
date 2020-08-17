@@ -34,22 +34,26 @@ export class VerifyTokenComponent implements OnInit {
 
   verify(token: string): void {
     token = token.toUpperCase();
-    (async () => {
-      try {
-        const snapShot = await firebase
-          .database()
-          .ref(`tokens/${token}`)
-          .once('value');
+    if (token) {
+      (async () => {
+        try {
+          const snapShot = await firebase
+            .database()
+            .ref(`tokens/${token}`)
+            .once('value');
 
-        if (snapShot.exists()) {
-          this.codeVerified.emit(true);
-        } else {
-          this.codeVerified.emit(false);
-          this.error = true;
+          if (snapShot.exists()) {
+            this.codeVerified.emit(true);
+          } else {
+            this.codeVerified.emit(false);
+            this.error = true;
+          }
+        } catch (err) {
+          console.log('Error');
         }
-      } catch (err) {
-        console.log('Error');
-      }
-    })();
+      })();
+    } else {
+      console.log('Empty');
+    }
   }
 }
