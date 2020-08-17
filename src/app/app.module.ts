@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,9 +16,19 @@ import { ChatModule } from './components/chat/chat.module';
 import { DashboardModule } from './components/dashboard/dashboard.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PWAPromptComponent } from './components/pwa-promptcomponent/pwa-prompt-component';
+import { PWAService } from './services/pwa-service';
+import { MatIconModule } from '@angular/material/icon';
 
+const initializer = (pwaService: PWAService) => () =>
+  pwaService.initPwaPrompt();
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, MobileNavComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    MobileNavComponent,
+    PWAPromptComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -28,9 +40,22 @@ import { environment } from '../environments/environment';
     MatDialogModule,
     MatInputModule,
     MatButtonModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    MatToolbarModule,
+    MatIconModule,
+    MatBottomSheetModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      registrationStrategy: 'registerImmediately',
+    }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      deps: [PWAService],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { electionDataService } from 'src/app/services/election.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import * as firebase from 'firebase';
+import { snapshotToArr } from 'src/app/components/chat/chatroom/chatroom.component';
+import { CountdownComponent } from 'ngx-countdown';
 
 @Component({
   selector: 'app-total-votes',
@@ -8,36 +10,124 @@ import { electionDataService } from 'src/app/services/election.service';
 })
 export class TotalVotesComponent implements OnInit {
   elections = [];
-  selectedEl;
-  sum: number = 0;
+  totalVotes: number;
+  inferedElectionKey: number;
+  finished = false;
+  @ViewChild('cd', { static: false })
+  private countdown: CountdownComponent;
 
-  constructor(private _electionDataService: electionDataService) {}
+  config = {
+    demand: true,
+    leftTime: 1,
+    format: 'HH:mm:ss',
+  };
+
+  constructor() {}
   ngOnInit() {
-    this._electionDataService
-      .getElectionData()
-      .subscribe((data) => (this.elections = data));
+    firebase
+      .database()
+      .ref('electionList')
+      .once('value', (snapshot) => {
+        this.elections = snapshotToArr(snapshot);
 
-    this.onSelect(0);
-  }
+        // Set a default key
+        this.inferedElectionKey = this.elections[0].key;
 
-  onSelect(id: number) {
-    if (id != 0) {
-      this._electionDataService.getElectionData().subscribe((data) => {
-        this.selectedEl = data.find((el) => el.id == id);
+        // Get Stats for a default election
+
+        // Get total votes for the default selection
+        this.getElectionTotalVotes(this.inferedElectionKey);
+
+        // Get Election end time
+        firebase
+          .database()
+          .ref('electionList')
+          .child(`${this.inferedElectionKey}`)
+          .on('value', (election) => {
+            let endTime =
+              election.val().startTime * 1 + election.val().duration * 1;
+            let now = new Date();
+            if (endTime - now.getTime() < 1) {
+              // Update database election status
+              firebase
+                .database()
+                .ref('electionList')
+                .child(`${this.inferedElectionKey}`)
+                .update({
+                  active: false,
+                });
+
+              return (this.countdown.left = 0);
+            }
+            this.countdown.left = endTime - now.getTime();
+            this.countdown.begin();
+          });
       });
-    } else {
-      this._electionDataService
-        .getElectionData()
-        .subscribe((data) => (this.selectedEl = data[0]));
-    }
-
-    this.findSum();
   }
 
-  findSum() {
-    this.sum = 0;
-    this.selectedEl.candidates.forEach((candidate) => {
-      this.sum += candidate.votes;
-    });
+  onSelect(key: number) {
+    // Reset style
+    this.finished = false;
+
+    // Update inferedkey
+    this.inferedElectionKey = key;
+
+    // Get Election Total Votes
+    this.getElectionTotalVotes(key);
+
+    // Get Election Time Left
+    this.countdown.restart();
+    this.countdown.i.text = '00:00:00';
+
+    this.setTimeLeft(key);
+  }
+
+  getElectionTotalVotes(key: number) {
+    firebase
+      .database()
+      .ref(`electionList/${key}`)
+      .on('value', (election) => {
+        this.totalVotes = election.val().totalVotes;
+      });
+  }
+
+  setTimeLeft(key: number) {
+    firebase
+      .database()
+      .ref('electionList')
+      .child(`${key}`)
+      .on('value', (election) => {
+        let endTime =
+          election.val().startTime * 1 + election.val().duration * 1;
+        let now = new Date();
+        if (endTime - now.getTime() < 1) {
+          // Update database election status
+          firebase.database().ref('electionList').child(`${key}`).update({
+            active: false,
+          });
+
+          this.finished = true;
+          return (this.countdown.left = 0);
+        }
+        this.countdown.left = endTime - now.getTime();
+        this.countdown.begin();
+      });
+  }
+  // Handle counter events
+  handleEvent(e) {
+    if (e.action == 'done') {
+      this.countdown.i.text = '00:00:00';
+
+      // Update election active status in database
+      firebase
+        .database()
+        .ref('electionList')
+        .child(`${this.inferedElectionKey}`)
+        .update({
+          active: false,
+        });
+
+      this.finished = true;
+    }
   }
 }

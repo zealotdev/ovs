@@ -5,21 +5,23 @@
     class="login--card__form"
   >
     <div class="login--card__form-input">
-      <input
-        type="text"
-        name="nickname"
-        formControlName="nickname"
-        autocomplete="off"
-      />
+      <mat-form-field>
+        <mat-label>Enter Your Nickname</mat-label>
+        <input
+          type="text"
+          name="nickname"
+          matInput
+          placeholder="eg. anoncodex"
+          formControlName="nickname"
+          autocomplete="off"
+        />
+      </mat-form-field>
       <div
         *ngIf="
           !loginForm.get('nickname').valid && loginForm.get('nickname').touched
         "
         class="invalid"
       >
-        <span *ngIf="loginForm.get('nickname').errors['required']"
-          >nickname can't be empty.</span
-        >
         <span *ngIf="loginForm.get('nickname').errors['nicknameIsTaken']"
           >nickname is taken.</span
         >
@@ -28,8 +30,8 @@
         >
       </div>
       <div class="login--card__form-input--link">
-        To login in you must agree to the
-        <a (click)="openUserAgreement()">User Agreement</a> Terms
+        To login in you must agree to the <b>User Agreement Terms</b> found
+        <a (click)="openUserAgreement()">here</a>
       </div>
     </div>
     <button
@@ -38,7 +40,7 @@
       type="submit"
       [disabled]="disabled"
     >
-      login
+      LOGIN
     </button>
   </form>
 </div>

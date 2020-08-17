@@ -18,35 +18,34 @@
     height: 56rem;
   }
   @include sm {
-    height: 30rem;
+    height: 50rem;
     padding: 2rem 0rem;
   }
 
   &--canvas {
-    padding-top: 4rem;
+    padding-top: 2rem;
     text-align: center;
+    height: 80%;
+    margin-top: auto;
 
     @include sm {
       padding-top: 1.4rem;
-      .chartjs-render-monitor {
-        height: 16.2rem !important;
-        font-size: 1rem !important;
-      }
     }
-    & .title {
-      font-size: 2.4rem;
-      color: #06beb6;
-      display: block;
-      margin-bottom: 2rem;
-      transition: all 0.3s ease-in-out;
+  }
+}
+.title {
+  font-size: 2.4rem;
+  color: #747474;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  text-align: center;
+  margin-top: 1.4rem;
 
-      @include md-down {
-        font-size: 1.6rem;
-      }
-      @include sm {
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
-      }
-    }
+  @include md-down {
+    font-size: 1.6rem;
+  }
+  @include sm {
+    font-size: 1.2rem;
   }
 }

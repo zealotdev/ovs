@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { electionDataService } from 'src/app/services/election.service';
 import * as firebase from 'firebase';
 import { snapshotToArr } from 'src/app/components/chat/chatroom/chatroom.component';
 
@@ -11,7 +10,7 @@ import { snapshotToArr } from 'src/app/components/chat/chatroom/chatroom.compone
 export class ElectionTypeComponent implements OnInit {
   public elections = [];
   @Output() selectedElection = new EventEmitter<number>();
-  constructor(private _electionDataService: electionDataService) {}
+  constructor() {}
 
   ngOnInit(): void {
     firebase
