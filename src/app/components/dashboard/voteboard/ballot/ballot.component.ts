@@ -35,7 +35,7 @@ export class BallotComponent implements OnInit {
   constructor(private matDialog: MatDialog) {}
 
   ngOnInit() {
-    this.dbRef.ref('electionList/').on('value', (snapshot) => {
+    this.dbRef.ref('electionList/').once('value', (snapshot) => {
       let electionSnapArr = snapToCandArr(snapshot);
       this.elections = [];
       electionSnapArr.forEach((election) => {
