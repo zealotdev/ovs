@@ -16,7 +16,7 @@ export class ElectionTypeComponent implements OnInit {
     firebase
       .database()
       .ref('electionList')
-      .on('value', (snapshot) => {
+      .once('value', (snapshot) => {
         this.elections = [];
         let electionData = snapshotToArr(snapshot);
         electionData.forEach((el) => {
