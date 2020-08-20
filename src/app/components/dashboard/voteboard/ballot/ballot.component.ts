@@ -55,7 +55,7 @@ export class BallotComponent implements OnInit {
 
     this.candidateName = '';
     if (key != 0) {
-      this.dbRef.ref(`electionList/${key}`).once('value', (snapshot) => {
+      this.dbRef.ref(`electionList/${key}`).on('value', (snapshot) => {
         this.candidatesObj = snapToCandArr(snapshot.child('candidates'));
         this.electionID = snapshot.val().id;
         this.electionType = snapshot.val().electionType;
